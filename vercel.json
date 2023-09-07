@@ -3,7 +3,7 @@
       {
         "source": "/(.*)",
         "destination": "https://www.bestessaywriter.co.uk/$1",
-        "permanent": "true"
+        "permanent": true
       }
     ]
   }
