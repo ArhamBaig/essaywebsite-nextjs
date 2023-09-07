@@ -1,7 +1,7 @@
 import { contentData } from "@/constants";
 import { blogData } from "@/constants";
 
-const EXTERNAL_DATA_URL = "http://localhost:3000";
+const EXTERNAL_DATA_URL = "https://www.bestessaywriter.co.uk/";
 
 export default async function sitemap() {
   const blogs = blogData.map((content)=>({
