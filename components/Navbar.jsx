@@ -630,7 +630,7 @@ const Navbar = () => {
                   className={`font-poppins text-white font-semibold cursor-pointer text-[17px] hover:text-orange-600 transition-all rounded-lg px-5 `}
                   onClick={() => setLiActive("Blogs")}
                 >
-                  <Link href="#blogs">Blogs</Link>
+                  <Link href="/blog">Blogs</Link>
                 </button>
               </li>
               <li className="relative">
