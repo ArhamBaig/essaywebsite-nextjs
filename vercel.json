@@ -1,8 +1,8 @@
 {
     "redirects": [
       {
-        "source": "/(.*)/?",
-        "destination": "https://bestessaywriter.co.uk/$1",
+        "source": "/(.*)/",
+        "destination": "https://bestessaywriter.co.uk/",
         "type": 301
       }
     ]
