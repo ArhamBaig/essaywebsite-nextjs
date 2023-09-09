@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
 import {
-  heroimg,
   premium,
   moneyback,
   trusted,
-  unilogos,
 } from "../public/assets";
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";

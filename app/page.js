@@ -1,7 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Guarantee } from "@/components/Guarantee";
 import Counter from '@/components/Counter';
-import Feedback from "@/components/Feedback";
 import { Dragndrop } from "@/components/Dragndrop";
 import Homecontent from "@/components/Homecontent";
 import Homecontent2 from "@/components/Homecontent2";

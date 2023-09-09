@@ -246,7 +246,7 @@ const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
               <Link href="#" className="flex" onClick={() => setSidebarLiActive((prev)=>prev === link.title ? "" : link.title)}>
                   {link.title}  {link.dropdown && (
                     <div className="ml-2 transition-all mt-2 h-[11px] w-[11px]">
-                      <Image className="transition-all" src={sidebarLiActive === link.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
+                      <Image className="transition-all" alt="Arrow image for dropdown" src={sidebarLiActive === link.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
                   )} 
               </Link>
               {link.dropdown && sidebarLiActive === link.title && (
@@ -261,7 +261,7 @@ const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
                       <Link className="flex" href="#" onClick={() => setSidebarSubLiActive((prev)=>prev === subLink.title ? "" : subLink.title)}>
                         {subLink.title}  {subLink.subdropdown && (
                     <div className="ml-2 transition-all mt-2 h-[11px] w-[11px]">
-                      <Image className="transition-all" src={sidebarSubLiActive === subLink.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
+                      <Image className="transition-all" alt="Arrow image for dropdown" src={sidebarSubLiActive === subLink.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
                   )}  </Link>
                       {subLink.subdropdown && sidebarSubLiActive === subLink.title && (
                         <ul className="list-none mt-4 flex flex-col ">

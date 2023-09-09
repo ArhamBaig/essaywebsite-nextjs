@@ -1,4 +1,3 @@
-import heroimg from "./heroimg.webp";
 import medalicon from "./medal-icon.png";
 import formaticon from "./format-icon.png";
 import priceicon from "./price-icon.png";
@@ -15,14 +14,8 @@ import rating from "./rating.webp";
 import client from "./client.webp";
 import tawktoimg from "./tawktoimg.jpg";
 import accordionarrow from "./accordionarrow.svg";
-import upload from "./upload.gif";
-import experts from "./experts.gif";
-import explain from "./explain.svg";
 import give from "./give.svg";
 import feedback from "./feedback.svg";
-import sitejabber from "./sitejabber.svg";
-import trustpilot from "./trustpilot.svg";
-import stars from "./stars.png";
 import blogging from "./blogging.webp";
 import essay30off from "./essay30off.webp";
 import essay30off2 from "./big-discount-offer.jpg";
@@ -63,13 +56,12 @@ import premium from "./trusted.png";
 import moneyback from "./quality.png";
 import location from "./location.svg";
 import phone from "./phone.svg";
-import unilogos from "./unilogos.webp";
+
 import whitephone from "./white-phone.png";
 import whitelocation from "./white-location.png";
 import whiteemail from "./white-email.png";
 export {
   logo2,
-  heroimg,
   medalicon,
   formaticon,
   priceicon,
@@ -86,14 +78,8 @@ export {
   client,
   tawktoimg,
   accordionarrow,
-  upload,
-  experts,
-  explain,
   give,
   feedback,
-  sitejabber,
-  trustpilot,
-  stars,
   blogging,
   essay30off,
   Drhenryimage,
@@ -133,7 +119,6 @@ export {
   moneyback,
   location,
   phone,
-  unilogos,
   whitephone,
   whitelocation,
   whiteemail,
