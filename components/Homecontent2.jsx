@@ -50,7 +50,7 @@ const Slider = ({ skillName, percentage }) => {
               style={{ width: `${percentage}%` }}
               className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-slate-800"
             >
-                <div className="flex text-sm sm:text-base items-center justify-center">{skillName}</div>
+                <div className="flex text-xs sm:text-sm items-center justify-center">{skillName}</div>
               {/* <div className=" text-white">{percentage}%</div> */}
             </div>
           </div>

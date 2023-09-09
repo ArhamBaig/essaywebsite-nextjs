@@ -1,7 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { logo, menu, close, arrowdown, arrowUp, facebook,
+import { useState, useRef } from "react";
+import {
+  logo,
+  menu,
+  close,
+  facebook,
   flickr,
   instagram,
   linkedin,
@@ -9,653 +13,202 @@ import { logo, menu, close, arrowdown, arrowUp, facebook,
   whatsapp2,
   tumblr,
   twitter,
-  mail } from "../public/assets";
-import { services } from "@/constants";
+  mail,
+  arrowUp,
+  arrowdown
+} from "../public/assets";
+import { navLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-
 const Navbar = () => {
-  // Hooks
-  const [nestedDropdownVisibility, setNestedDropdownVisibility] = useState({});
-  const [subDropdownVisibility, setSubDropdownVisibility] = useState("");
-  const [liActive, setLiActive] = useState("Home");
+  const timeoutRef = useRef(null);
+  const [liActive, setLiActive] = useState("");
+  const [subLiActive, setSubLiActive] = useState("");
+ const [sidebarLiActive, setSidebarLiActive] = useState("") 
+const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
   const [sidebarToggle, setSidebarToggle] = useState(false);
-  const [isServicesDropdownVisible, setIsServicesDropdownVisible] =
-    useState(false);
-  const [isEssaySubDropdownVisible, setIsEssaySubDropdownVisible] =
-    useState(false);
-  const [isCaseStudySubDropdownVisible, setIsCaseStudySubDropdownVisible] =
-    useState(false);
-  const [isAssignmentSubDropdownVisible, setIsAssignmentSubDropdownVisible] =
-    useState(false);
-  const [isLawSubDropdownVisible, setIsLawSubDropdownVisible] = useState(false);
-  const [isCourseworkSubDropdownVisible, setisCourseworkSubDropdownVisible] =
-    useState(false);
-  const [
-    isDissertationSubDropdownVisible,
-    setisDissertationSubDropdownVisible,
-  ] = useState(false);
-  const [isReportSubDropdownVisible, setisReportSubDropdownVisible] =
-    useState(false);
-  // functions
 
-  const handleDropdownMouseEnter = (...setStateFunctions) => {
-    setStateFunctions.forEach((setStateFunction) => {
-      setStateFunction(true);
-    });
+  const handleMouseEnterLi = (link) => () => {
+    // Use a function to return the event handler
+    if (link.dropdown) {
+      setSubLiActive("Essay");
+      setLiActive(link.title);
+      clearTimeout(timeoutRef.current);
+    }
   };
-
-  const handleDropdownMouseLeave = (...setStateFunctions) => {
-      setStateFunctions.forEach((setStateFunction) => {
-        setStateFunction(false);
-      });
+  const handleMouseLeaveLi = () => {
+    timeoutRef.current = setTimeout(() => {
+      setLiActive("");
+    }, 700);
   };
-
-  const handleParentDropdownMouseLeave = (setStateFunction) => {
-      setStateFunction(false);
-  }
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 640) {
-        setSidebarToggle(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
- 
-
-
   return (
-    <section className="">
-    <div className="bg-white/50 w-screen px-3 sm:px-8 md:px-14 lg:px-20 fixed backdrop-blur-lg   z-50  flex justify-between items-center h-10">
-    <a href= "mailto:Scriptershubltd@gmail.com">
-    <div className="flex cursor-pointer   font-semibold  rounded-full">
-         
-        <Image className="mr-2 p-[3px] hover:-translate-y-1 transition-all cursor-pointer" src={mail} height={20} width={30} alt="bestessaywriter email"/>
-          <p className="hidden md:block">sales@bestessaywriter.co.uk </p>
-        </div></a>
-        <p className="font-semibold hidden md:block">Get upto <span className="text-orange-600">50% off</span> on your 1st assignment</p>
+    <div className=" w-screen z-40 text-black fixed ">
+      <div className="bg-white/80 w-screen px-3 sm:px-8 md:px-14 lg:px-20 fixed backdrop-blur-lg   z-50  flex justify-between items-center h-10">
+        <a href="mailto:Scriptershubltd@gmail.com" >
+          <div className="flex cursor-pointer   font-semibold  rounded-full">
+            <Image
+              className="mr-2 p-[3px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={mail}
+              height={20}
+              width={30}
+              alt="bestessaywriter email"
+            />
+            <p className="hidden md:block">sales@bestessaywriter.co.uk </p>
+          </div>
+        </a>
+        <p className="font-semibold hidden xl:block">
+          Get upto <span className="text-orange-600">50% off</span> on your 1st
+          assignment
+        </p>
         <div className="flex font-semibold rounded-lg  items-center">
-        <a href="https://twitter.com/BestEssayWrit13"><Image className="p-[6px] hover:-translate-y-1 transition-all cursor-pointer" src={twitter} height={20} width={40} alt="bestessaywriter twitter profile"/></a>
-        <a href="https://www.facebook.com/bestessaywriter.co.uk"><Image  className="p-[6px] hover:-translate-y-1 transition-all cursor-pointer" src={facebook} height={20} width={40} alt="bestessaywriter facebook profile"/></a>
-        <a href="https://www.pinterest.co.uk/best_essay_writer"> <Image  className="p-[4px] hover:-translate-y-1 transition-all cursor-pointer" src={pinterest} height={20} width={40} alt="bestessaywriter pinterest profile"/></a>
-        <a href="https://www.instagram.com/bestessaywriter.co.uk"> <Image  className="p-[5px] hover:-translate-y-1 transition-all cursor-pointer" src={instagram} height={20} width={40} alt="bestessaywriter instagram profile"/></a>
-        <a href="https://www.linkedin.com/company/best-essay-writer"><Image   className="p-[5px] hover:-translate-y-1 transition-all cursor-pointer" src={linkedin} height={20} width={40}alt="bestessaywriter linkedin profile"/></a>
-        <a href="https://www.tumblr.com/blog/view/bestessaywriter"><Image   className="p-[7px] hover:-translate-y-1 transition-all cursor-pointer" src={tumblr} height={20} width={40}alt="bestessaywriter tumblr profile"/></a>
-        <a href="https://www.flickr.com/photos/helpbestessaywritercouk"><Image  className="p-[3px] hover:-translate-y-1 transition-all cursor-pointer" src={flickr} height={20} width={40}alt="bestessaywriter flickr profile"/></a>
-        <a href="https://api.whatsapp.com/send/?phone=%2B447378489100&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><Image  className="p-[7px] hover:-translate-y-1 transition-all cursor-pointer" src={whatsapp2} height={20} width={40} alt="bestessaywriter whatsapp"/></a>
+          <a href="https://twitter.com/BestEssayWrit13" target="_blank">
+            <Image
+              className="p-[6px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={twitter}
+              height={20}
+              width={40}
+              alt="bestessaywriter twitter profile"
+            />
+          </a>
+          <a href="https://www.facebook.com/bestessaywriter.co.uk" target="_blank">
+            <Image
+              className="p-[6px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={facebook}
+              height={20}
+              width={40}
+              alt="bestessaywriter facebook profile"
+            />
+          </a>
+          <a href="https://www.pinterest.co.uk/best_essay_writer" target="_blank">
+            {" "}
+            <Image
+              className="p-[4px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={pinterest}
+              height={20}
+              width={40}
+              alt="bestessaywriter pinterest profile"
+            />
+          </a>
+          <a href="https://www.instagram.com/bestessaywriter.co.uk" target="_blank">
+            {" "}
+            <Image
+              className="p-[5px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={instagram}
+              height={20}
+              width={40}
+              alt="bestessaywriter instagram profile"
+            />
+          </a>
+          <a href="https://www.linkedin.com/company/best-essay-writer" target="_blank">
+            <Image
+              className="p-[5px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={linkedin}
+              height={20}
+              width={40}
+              alt="bestessaywriter linkedin profile"
+            />
+          </a>
+          <a href="https://www.tumblr.com/blog/view/bestessaywriter" target="_blank">
+            <Image
+              className="p-[7px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={tumblr}
+              height={20}
+              width={40}
+              alt="bestessaywriter tumblr profile"
+            />
+          </a>
+          <a href="https://www.flickr.com/photos/helpbestessaywritercouk" target="_blank">
+            <Image
+              className="p-[3px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={flickr}
+              height={20}
+              width={40}
+              alt="bestessaywriter flickr profile"
+            />
+          </a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=%2B447378489100&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="p-[7px] hover:-translate-y-1 transition-all cursor-pointer"
+              src={whatsapp2}
+              height={20}
+              width={40}
+              alt="bestessaywriter whatsapp"
+            />
+          </a>
         </div>
       </div>
-
-      <nav className="w-screen bg-gray-800 items-center fixed mt-10 z-30">
-     
-      
-      
-        {/* Navbar elements */}
-        <nav
-          className={`w-full pt-8 h-[90px] bg-gray-800 items-center fixed
-          }`}
-        >
-          {/* Home */}
-          <div className="ml-10 relative hidden normal-screen:flex justify-center">
-         
-            <ul className="flex  items-center justify-center">
-            <div
-          className={`flex bg-gray-800 items-center absolute left-0
-          }`}
-        >
-          <Image className="p-3" src={logo} alt="logo" height={90} width={90} />
-        </div>
-              <li
-                className="font-poppins text-white font-semibold cursor-pointer text-[17px] hover:text-orange-600 transition-all rounded-lg  px-5"
-                onClick={() => setLiActive("Home")}
-              >
-                <button>
-                  <Link href="/">Home</Link>
-                </button>
-              </li>
-
-              {/* Services Menu */}
-              <li
-                className="relative"
-                onMouseEnter={() => {
-                  handleDropdownMouseEnter(setIsServicesDropdownVisible);
-                }}
-                onMouseLeave={() => {
-                  handleParentDropdownMouseLeave(setIsServicesDropdownVisible);
-                }}
-              >
-                <button
-                  className={`font-poppins text-white font-semibold cursor-pointer text-[17px] hover:text-orange-600 transition-all rounded-lg  ${
-                    isServicesDropdownVisible ? "text-white" : "text-dimWhite"
-                  } px-5`}
+      <div className="bg-gradient-to-r via-orange-600 from-white to-white w-screen h-[120px] z-50 ">
+        <div className="flex justify-between items-center h-[119px] whitespace-nowrap xl:px-52 lg:px-40 md:px-20 bg-white mt-10 ">
+          <div className="flex">
+            <Link href="/">
+              {" "}
+              <Image height={100} width={150} alt="Go to home" src={logo} />
+            </Link>
+            <ul className=" hidden lg:flex  gap-10 lg:gap-12  px-20 items-center ">
+              {navLinks.map((link, index) => (
+                <li
+                  className="flex cursor-default relative "
+                  key={index}
+                  onMouseEnter={handleMouseEnterLi(link)}
+                  onMouseLeave={handleMouseLeaveLi}
                 >
-                  <Link
-                    href="#"
-                    onMouseEnter={() => {
-                      setIsServicesDropdownVisible(true);
-                    }}
-                  >
-                    Services
-                  </Link>
-                  <div className="absolute right-1 top-[21px] transform -translate-y-3.5 ">
-                    <Image
-                      src={isServicesDropdownVisible ? arrowUp : arrowdown}
-                      alt="Arrow Icon"
-                      className={`w-[12px] h-[12px] object-contain ${
-                        isServicesDropdownVisible ? "arrow-up" : "arrow-down"
-                      }`}
-                    />
-                  </div>
-
-                  <div
-                    className={`dropdown ${
-                      isServicesDropdownVisible
-                        ? "dropdown-enter"
-                        : "dropdown-exit"
-                    } bg-gray-800 text-white font-normal min-w-[220px] z-20 absolute rounded-bl-lg rounded-br-lg  top-full`}
-                    onMouseEnter={() => {
-                      handleDropdownMouseEnter(setIsServicesDropdownVisible)
-                    }}
-                    onMouseLeave={() => {
-                      handleDropdownMouseLeave(setIsServicesDropdownVisible,setIsEssaySubDropdownVisible,setIsAssignmentSubDropdownVisible)
-                    }}
-                  >
-                    {/* Add your dropdown menu items here */}
-                    <ul className="pb-2">
-                      <li
-                        className="flex justify-center py-2 hover:text-orange-600"
-                        onMouseEnter={(e) => {
-                          handleDropdownMouseEnter(setIsEssaySubDropdownVisible) ;
-                          e.stopPropagation();
-                        }}
-                        onMouseLeave={() => {
-                          handleDropdownMouseLeave(setIsEssaySubDropdownVisible)
-                    
-                        }}
-                      >
-                        <Link href="#" className="flex items-center">
-                          Essay
-                          <svg
-                            className="w-2.5 h-2.5 ml-2.5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                        </Link>
-                        {isEssaySubDropdownVisible && (
-                          <div className="sub-dropdown">
-                            <ul
-                              className={` grid grid-cols-2 pb-2  bg-gray-800 rounded-tr-lg rounded-br-lg rounded-bl-lg text-white font-normal min-w-[570px] px-4 ${
-                                isEssaySubDropdownVisible
-                                  ? "opacity-100 transition-all delay-700 ease-in-out "
-                                  : ""
-                              }`}
-                            >
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="/essay-editing-service">Essay Editing</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2  text-left">
-                                <Link href="/essay-editing-service">Buy an Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2  text-left">
-                                <Link href="/nursing-essay-writing-service">Nursing Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2  text-left">
-                                <Link href="/masters-essay-writing-service">
-                                  Master&apos;s Essay
-                                </Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2  text-left">
-                                <Link href="/best-law-essay-writing-service-uk">Law Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="/mba-essay-writing-service">MBA Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">University Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Write My Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Make My Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Do My Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Narrative Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">
-                                  Argumentative Essay
-                                </Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Expository Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Descriptive Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Custom Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Admission Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Urgent Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Analysis Essay</Link>
-                              </li>
-
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Critical Essay</Link>
-                              </li>
-
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Scholarship Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Student Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Persuasive Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Process Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Literature Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">Informal Essay</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">
-                                  Classification Essay
-                                </Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">
-                                  Cause and Effect Essay
-                                </Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="#subitem2">
-                                  Compare and Contrast Essay
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        )}
-                      </li>
-
-                      <li
-                        className="py-2   transition-all flex justify-center hover:text-orange-600"
-                        onMouseEnter={(e) => {
-                          handleDropdownMouseEnter(setIsAssignmentSubDropdownVisible)
-                      
-                          e.stopPropagation();
-                        }}
-                        onMouseLeave={() => {
-                          handleDropdownMouseLeave(setIsAssignmentSubDropdownVisible)
-                          
-                        }}
-                      >
-                        <Link href="#" className="flex items-center">
-                          Assignment
-                          <svg
-                            className="w-2.5 h-2.5 ml-2.5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                        </Link>
-                        {isAssignmentSubDropdownVisible && (
-                          <div className="sub-dropdown2 top-9">
-                            <ul className=" pt-1 pb-1 bg-gray-800 rounded-tr-lg rounded-br-lg text-white font-normal min-w-[240px] pl-4">
-                              <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                <Link href="/best-assignment-writing-service">Assignment Writing</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                <Link href="/cookery-assignment-help">Cookery</Link>
-                              </li>
-
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left"
-                                  onMouseEnter={(e) => {
-                                    handleDropdownMouseEnter(setIsLawSubDropdownVisible)
-                                   
-                                    e.stopPropagation();
-                                  }}
-                                  onMouseLeave={() => {
-                                    handleDropdownMouseLeave(setIsLawSubDropdownVisible)
-                                   
-                                  }}>
-                                <Link
-                                  href="/law-assignment-help"
-                                  className="flex items-center"
-                              
-                                >
-                                  Law
-                                  <svg
-                                    className="w-2.5 h-2.5 ml-2"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 6 10"
-                                  >
-                                    <path
-                                      stroke="currentColor"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth="2"
-                                      d="m1 9 4-4-4-4"
-                                    />
-                                  </svg>
-                                </Link>
-                                {isLawSubDropdownVisible && (
-                                  <div className="sub-dropdown3 absolute left-full">
-                                    <ul
-                                      className=" top-10 bg-gray-800 text-white rounded-tr-lg rounded-br-lg rounded-bl-lg font-normal min-w-[240px] pl-4 py-2"
-                                      onMouseEnter={(e) => {
-                                        handleDropdownMouseEnter(setIsLawSubDropdownVisible)
-                                      
-                                        e.stopPropagation();
-                                      }}
-                                      onMouseLeave={() => {
-                                        handleDropdownMouseLeave(setIsLawSubDropdownVisible)
-                                    
-                                      }}
-                                    >
-                                      <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                        <Link href="/property-law-assignment-help">
-                                          Property Law
-                                        </Link>
+                  {link.href ? (
+                            <Link href={link.href}>{link.title}</Link>
+                          ) : (
+                            link.title
+                          )}
+                  {liActive === link.title && (
+                    <ul className="absolute -left-52 top-[72px] h-[410px] w-52 bg-white transition-all ease-in-out duration-300">
+                      {link.dropdown.map((sublink, index) => (
+                        <li
+                          key={index}
+                          className="hover:bg-orange-600 cursor-default border-b-[1px]  border-orange-600 transition-all p-2 "
+                          onMouseEnter={() => setSubLiActive(sublink.title)}
+                        >
+                          {sublink.href ? (
+                            <Link href={sublink.href}>{sublink.title}</Link>
+                          ) : (
+                            sublink.title
+                          )}
+                          {subLiActive === sublink.title &&
+                            sublink.subdropdown && (
+                              <ul className=" absolute left-52 top-0 h-[410px] w-[660px] lg:w-[700px] xl:w-[1200px] bg-white backdrop-blur-md grid grid-cols-3 grid-rows-[repeat(12,minmax(0,1fr))]">
+                                {sublink.subdropdown.map(
+                                  (subsublink, index) => (
+                                    <Link key={index} href={subsublink.href}>
+                                      <li
+                                        key={index}
+                                        className="p-2 hover:text-orange-600 transition-all cursor-pointer"
+                                        onClick={() => setLiActive("")}
+                                      >
+                                        {subsublink.title}
                                       </li>
-                                      <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                        <Link href="/constitutional-law-assignment-help">
-                                          Constitutional Law
-                                        </Link>
-                                      </li>
-                                      <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                        <Link href="/administrative-law-assignment-help">
-                                          Administrative Law
-                                        </Link>
-                                      </li>
-                                      <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                        <Link href="/criminal-law-assignment-help">
-                                          Criminal Law
-                                        </Link>
-                                      </li>
-                                      <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                        <Link href="/human-right-law-assignment-help">
-                                          Human Right Law
-                                        </Link>
-                                      </li>
-                                      <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                        <Link href="/civil-law-assignment-help">Civil Law</Link>
-                                      </li>
-                                      <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                        <Link href="/tort-law-assignment-help">Tort Law</Link>
-                                      </li>
-                                    </ul>
-                                  </div>
+                                    </Link>
+                                  )
                                 )}
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all text-left pt-2 ">
-                                <Link href="/management-assignment-help">Management</Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="/managerial-economics-assignment-help">
-                                  Managerial Economics
-                                </Link>
-                              </li>
-                              <li className="  hover:text-orange-600 transition-all pt-2 text-left">
-                                <Link href="/managerial-accounting-assignment-help">
-                                  Managerial Accounting
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        )}
-                      </li>
-                      <li
-                        className="  transition-all flex justify-center py-2 hover:text-orange-600"
-                        onMouseEnter={(e) => {
-                          handleDropdownMouseEnter(setIsCaseStudySubDropdownVisible)
-                       
-                          e.stopPropagation();
-                        }}
-                        onMouseLeave={() => {
-                          handleDropdownMouseLeave(setIsCaseStudySubDropdownVisible)
-                        
-                        }}
-                      >
-                        <Link href="#" className="flex items-center">
-                          Case Study
-                          <svg
-                            className="w-2.5 h-2.5 ml-2.5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                        </Link>
-                        {isCaseStudySubDropdownVisible && (
-                          <div className="sub-dropdown2 top-4 mt-[63px]">
-                            <ul className=" bg-gray-800 rounded-tr-lg rounded-br-lg text-white font-normal min-w-[240px] items-center py-2 pl-2">
-                              <li className="  hover:text-orange-600 transition-all text-left py-2 ">
-                                <Link href="/best-case-study-writing-service">Case Study Writing</Link>
-                              </li>
-                            </ul>
-                          </div>
-                        )}
-                      </li>
-                      <li
-                        className="  transition-all flex justify-center hover:text-orange-600 py-2"
-                        onMouseEnter={(e) => {
-                          handleDropdownMouseEnter(setisCourseworkSubDropdownVisible)
-                          e.stopPropagation();
-                        }}
-                        onMouseLeave={() => {
-                          handleDropdownMouseLeave(setisCourseworkSubDropdownVisible)
-                     
-                        }}
-                      >
-                        <Link href="/best-coursework-writing-service" className="flex items-center">
-                          Coursework
-                          <svg
-                            className="w-2.5 h-2.5 ml-2.5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                        </Link>
-                        {isCourseworkSubDropdownVisible && (
-                          <div className="sub-dropdown2 top-6 mt-[92px]">
-                            <ul className=" bg-gray-800 rounded-tr-lg rounded-br-lg text-white font-normal  min-w-[240px] py-2 pl-2">
-                              <li className="  hover:text-orange-600 transition-all text-left py-2  ">
-                                <Link href="/best-coursework-writing-service">Coursework Writing</Link>
-                              </li>
-                            </ul>
-                          </div>
-                        )}
-                      </li>
-                      <li
-                        className="  transition-all flex justify-center py-2 hover:text-orange-600"
-                        onMouseEnter={(e) => {
-                          handleDropdownMouseEnter(setisDissertationSubDropdownVisible)
-               
-                          e.stopPropagation();
-                        }}
-                        onMouseLeave={() => {
-                          handleDropdownMouseLeave(setisDissertationSubDropdownVisible)
-                       
-                        }}
-                      >
-                        <Link href="#" className="flex items-center">
-                          Dissertation
-                          <svg
-                            className="w-2.5 h-2.5 ml-2.5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                        </Link>
-                        {isDissertationSubDropdownVisible && (
-                          <div className="sub-dropdown2 top-7 mt-32">
-                            <ul className=" bg-gray-800 rounded-tr-lg rounded-br-lg text-white font-normal min-w-[240px] pb-2 pt-2 pl-2">
-                              <li className="  hover:text-orange-600 transition-all text-left py-2  ">
-                                <Link href="/best-dissertation-writing-service">
-                                  Best Dissertation Writing
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        )}
-                      </li>
-                      <li
-                        className="  transition-all flex justify-center py-2 hover:text-orange-600"
-                        onMouseEnter={(e) => {
-                          handleDropdownMouseEnter(setisReportSubDropdownVisible)
-                          
-                          e.stopPropagation();
-                        }}
-                        onMouseLeave={() => {
-                          handleDropdownMouseLeave(setisReportSubDropdownVisible)
-                       
-                        }}
-                      >
-                        <Link href="#" className="flex items-center">
-                          Report
-                          <svg
-                            className="w-2.5 h-2.5 ml-2.5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                        </Link>
-                        {isReportSubDropdownVisible && (
-                          <div className="sub-dropdown2 top-10 mt-40">
-                            <ul className=" bg-gray-800 rounded-tr-lg rounded-br-lg text-white font-normal  min-w-[240px] pb-2 pt-2 pl-2">
-                              <li className="  hover:text-orange-600 transition-all text-left py-2 ">
-                                <Link href="/best-report-writing-service">
-                                  Best Report Writing
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        )}
-                      </li>
-                      <li className="  transition-all hover:text-orange-600 py-2">
-                        <Link href="/best-proofreading-service">Proofreading</Link>
-                      </li>
-                      <li className="  transition-all hover:text-orange-600 py-2">
-                        <Link href="/academic-referencing-styles">Referencing Styles</Link>
-                      </li>
-                      <li className="  transition-all hover:text-orange-600 py-2">
-                        <Link href="/phd-thesis-writing">PHD Thesis Writing</Link>
-                      </li>
-                      <li className="  transition-all hover:text-orange-600 py-2">
-                        <Link href="/term-paper-writing">Team Paper Writing</Link>
-                      </li>
-                      {/* Add more items here */}
+                              </ul>
+                            )}
+                        </li>
+                      ))}
                     </ul>
-                  </div>
-                </button>
-              </li>
-
-              <li className="relative">
-                <button
-                  className={`font-poppins text-white font-semibold cursor-pointer text-[17px] hover:text-orange-600 transition-all rounded-lg px-5 `}
-                  onClick={() => setLiActive("Blogs")}
-                >
-                  <Link href="/blog">Blogs</Link>
-                </button>
-              </li>
-              <li className="relative">
-                <button
-                  className="font-poppins text-white font-semibold cursor-pointer text-[17px] hover:text-orange-600 transition-all rounded-lg px-5"
-                  onClick={() => setLiActive("About us")}
-                >
-                  <Link href="reviews">Reviews</Link>
-                </button>
-              </li>
-              <li className="relative">
-                <button
-                  className="font-poppins text-white font-semibold cursor-pointer text-[17px] hover:text-orange-600 transition-all rounded-lg px-5"
-                  onClick={() => setLiActive("Contact us")}
-                >
-                  <Link href="contact">Contact us</Link>
-                </button>
-              </li>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
-
-
-          {/* -------------------------------------------------------------------------------------------------------- */}
-
-          <div className="normal-screen:hidden flex mt-2 z-40 justify-end mx-3">
+          <button className="xl:flex hidden bg-white text-black border-2 border-orange-600 hover:text-white hover:bg-orange-500 transition-all
+           hover:font-semibold rounded-full h-10 p-5 items-center  animate-pulse"
+           onClick={() => {
+            if (typeof Tawk_API !== "undefined") {
+              Tawk_API.toggle();
+            }
+          }}
+           >Live Chat</button>
+           <div className="lg:hidden flex mt-2 z-30 mr-16 ">
             <Image
               src={menu}
               alt="menu"
@@ -663,279 +216,74 @@ const Navbar = () => {
               onClick={() => setSidebarToggle(!sidebarToggle)}
             />
           </div>
-        </nav>
-        {/* Sidebar */}
-        <div
-          className={`${
-            sidebarToggle ? "sidebar-visible" : "sidebar-hidden"
-          } p-6 bg-gray-800 text-white  right-0 top-0 h-full w-full fixed z-20 transition-all`}
-        >
-          <div className="flex">
-            <div
-              className={`${
-                sidebarToggle ? "sidebar-visible" : "sidebar-hidden"
-              } ps-6 bg-gray-800 text-white right-0 top-0 h-full  w-full fixed z-20 transition-all`}
-            >
-              {/* Close Button inside Sidebar */}
-              <div className="flex justify-end  relative">
-                <Image
-                  src={close}
-                  alt="Close menu"
-                  width={28}
-                  height={28}
-                  className=" object-contain cursor-pointer absolute right-5 top-12"
-                  onClick={() => setSidebarToggle(!sidebarToggle)}
-                />
-              </div>
-
-              <div className="justify-start items-start flex flex-col h-screen overflow-y-scroll overflow-hidden">
-                <ul className="list-none mt-10 flex flex-col">
-                  <li
-                    className={`font-poppins text-lg cursor-pointer text-[12px]   hover:text-orange-600 transition-all p-2 mb-4`}
-                    onClick={() => {
-                      setSidebarToggle(false); // Close the sidebar when a link is clicked
-                    }}
-                  >
-                    <Link href="#home">Home</Link>
-                  </li>
-
-                  <li
-                    className={`font-poppins text-lg cursor-pointer text-[12px] hover:text-orange-600 transition-all p-2 ${
-                      liActive === "Services" ? "text-white" : "text-dimWhite"
-                    } mb-4`}
-                    onClick={() => {
-                      setLiActive("Services");
-                      setIsServicesDropdownVisible(!isServicesDropdownVisible);
-                    }}
-                  >
-                    <Link href="#Services" className="flex items-center">
-                      Services
-                      <div className="ml-2 mt-1">
-                        <Image
-                          src={isServicesDropdownVisible ? arrowUp : arrowdown}
-                          alt="Arrow Icon"
-                          className={`w-[11px] h-[11px] object-contain ${
-                            isServicesDropdownVisible
-                              ? "arrow-up"
-                              : "arrow-down"
-                          }`}
-                        />
-                      </div>
-                    </Link>
-                  </li>
-
-                  {isServicesDropdownVisible && (
-                    <div className="bg-gray-800  px-2">
-                      <ul>
-                        {services.map((service) => (
-                          <li
-                            key={service.id}
-                            className={`font-poppins text-lg cursor-pointer text-[12px] p-2 ${
-                              liActive === service.name
-                                ? "text-white"
-                                : "text-dimWhite"
-                            } mb-2 ml-2`}
-                            onClick={() => {
-                              if (liActive === service.name) {
-                                // If the clicked li is already active, close the dropdown
-                                setLiActive(null);
-                                setSubDropdownVisibility({});
-                              } else {
-                                // If a different li is clicked, set it as active and close others
-                                if (liActive) {
-                                  // Reset the arrow of the previous active li
-                                  setSubDropdownVisibility((prevState) => ({
-                                    ...prevState,
-                                    [liActive]: false,
-                                  }));
-                                }
-                                setLiActive(service.name);
-                                setSubDropdownVisibility((prevState) => ({
-                                  ...prevState,
-                                  [service.name]: true, // Open the clicked dropdown
-                                }));
-                              }
-                            }}
-                          >
-                            <Link
-                              href={`${service.url}`}
-                              className="flex items-center"
-                            >
-                              <p className="hover:text-orange-600">
-                                {service.name}
-                              </p>
-                              {Object.keys(service.subMenuItems).length > 0 && (
-                                <div className="ml-2 mt-1">
-                                  <Image
-                                    src={
-                                      subDropdownVisibility[service.name]
-                                        ? arrowUp
-                                        : arrowdown
-                                    }
-                                    alt="Arrow Icon"
-                                    className={`w-[11px] h-[11px] object-contain ${
-                                      subDropdownVisibility[service.name]
-                                        ? "arrow-up"
-                                        : "arrow-down"
-                                    } transition-transform duration-300`}
-                                  />
-                                </div>
-                              )}
-                            </Link>
-
-                            {liActive === service.name &&
-                              subDropdownVisibility[service.name] &&
-                              Object.keys(service.subMenuItems).length > 0 && (
-                                <ul className="space-y-3 mt-4 ml-4 sidebar-subdropdown ">
-                                  {Object.entries(service.subMenuItems).map(
-                                    ([subServiceName, subServiceValue]) => (
-                                      <li
-                                        key={subServiceName}
-                                        onClick={(e) => {
-                                          e.stopPropagation();
-                                          typeof subServiceValue !== "object"
-                                            ? setSidebarToggle(false)
-                                            : "";
-
-                                          setNestedDropdownVisibility(
-                                            (prevState) => ({
-                                              ...prevState,
-                                              [subServiceName]:
-                                                !prevState[subServiceName],
-                                            })
-                                          );
-                                        }}
-                                      >
-                                        <div
-                                          className={`flex items-center hover:text-orange-600`}
-                                        >
-                                          <Link href={subServiceValue}>
-                                            {subServiceName}
-                                          </Link>
-                                          {typeof subServiceValue ===
-                                            "object" &&
-                                            subServiceValue !== null && (
-                                              <div className="ml-2 mt-1">
-                                                <Image
-                                                  src={
-                                                    nestedDropdownVisibility[
-                                                      subServiceName
-                                                    ]
-                                                      ? arrowUp
-                                                      : arrowdown
-                                                  }
-                                                  alt="Arrow Icon"
-                                                  className={`w-[11px] h-[11px] object-contain ${
-                                                    nestedDropdownVisibility[
-                                                      subServiceName
-                                                    ]
-                                                      ? "arrow-up"
-                                                      : "arrow-down"
-                                                  } transition-transform duration-300`}
-                                                />
-                                              </div>
-                                            )}
-                                        </div>
-                                        {typeof subServiceValue === "object" &&
-                                          subServiceValue !== null && (
-                                            <ul
-                                              className={`pl-4 space-y-2 mt-2 sidebar-subdropdown ${
-                                                nestedDropdownVisibility[
-                                                  subServiceName
-                                                ]
-                                                  ? "block"
-                                                  : "hidden"
-                                              }`}
-                                            >
-                                              {Object.entries(
-                                                subServiceValue
-                                              ).map(
-                                                ([
-                                                  nestedSubServiceName,
-                                                  nestedSubServiceHref,
-                                                ]) => (
-                                                  <li
-                                                    key={nestedSubServiceName}
-                                                    onClick={(e) => {
-                                                      e.stopPropagation();
-                                                      setSidebarToggle(false);
-                                                      setNestedDropdownVisibility(
-                                                        (prevState) => ({
-                                                          ...prevState,
-                                                          [nestedSubServiceName]:
-                                                            !prevState[
-                                                              nestedSubServiceName
-                                                            ],
-                                                        })
-                                                      );
-                                                    }}
-                                                  >
-                                                    <Link
-                                                      href={
-                                                        nestedSubServiceHref
-                                                      }
-                                                    >
-                                                      {nestedSubServiceName}
-                                                    </Link>
-                                                  </li>
-                                                )
-                                              )}
-                                            </ul>
-                                          )}
-                                      </li>
-                                    )
-                                  )}
-                                </ul>
-                              )}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  <li
-                    className={`font-poppins text-lg cursor-pointer text-[12px] hover:text-orange-600 transition-all p-2 ${
-                      liActive === "Reviews" ? "text-white" : "text-dimWhite"
-                    } mb-4`}
-                    onClick={() => {
-                      setSidebarToggle(false);
-                    }}
-                  >
-                    <Link href="/reviews" className="flex items-center">
-                      Reviews
-                    </Link>
-                  </li>
-
-                  <li
-                    className={`font-poppins text-lg cursor-pointer text-[12px] hover:text-orange-600 transition-all p-2 ${
-                      liActive === "Blogs" ? "text-white" : "text-dimWhite"
-                    } mb-4`}
-                    onClick={() => {
-                      setSidebarToggle(false);
-                    }}
-                  >
-                    <Link href="/blog" className="flex items-center">
-                      Blogs
-                    </Link>
-                  </li>
-
-                  <li
-                    className={`font-poppins text-lg cursor-pointer text-[12px]   hover:text-orange-600 transition-all p-2 ${
-                      liActive === "About us" ? "text-white" : "text-dimWhite"
-                    } mb-4`}
-                    onClick={() => {
-                      setSidebarToggle(false);
-                    }}
-                  >
-                    <Link href="/contact">Contact us</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
-      </nav>
-    </section>
+        
+      </div>
+      <div
+        className={`${
+          sidebarToggle ? "sidebar-visible" : "sidebar-hidden"
+        } p-6 bg-white text-slate-900  right-0 top-0 h-full w-full fixed z-40 transition-all`}
+      >
+        {/* Close Button inside Sidebar */}
+        <div className="relative flex justify-end pt-[52px] right-6">
+          <Image
+            src={close}
+            alt="Close menu"
+            width={28}
+            height={28}
+            className=" object-contain cursor-pointer"
+            onClick={() => setSidebarToggle(!sidebarToggle)}
+          />
+        </div>
+        <div className="justify-start items-start flex flex-col h-[84%] overflow-y-scroll overflow-hidden">
+        <ul className="list-none mt-10 flex flex-col ">
+          {navLinks.map((link, index) => (
+            <li
+              key={index}
+              className={`py-2 cursor-pointer`}
+            >
+            {/* link.href goes here */}
+              <Link href="#" className="flex" onClick={() => setSidebarLiActive((prev)=>prev === link.title ? "" : link.title)}>
+                  {link.title}  {link.dropdown && (
+                    <div className="ml-2 transition-all mt-2 h-[11px] w-[11px]">
+                      <Image className="transition-all" src={sidebarLiActive === link.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
+                  )} 
+              </Link>
+              {link.dropdown && sidebarLiActive === link.title && (
+                <ul className="list-none mt-4 flex flex-col ">
+                  {link.dropdown.map((subLink, index) => (
+                    <li
+                      key={index}
+                      className="py-1 ms-3 cursor-pointer"
+                      
+                    >
+                      {/* link.href goes here */}
+                      <Link className="flex" href="#" onClick={() => setSidebarSubLiActive((prev)=>prev === subLink.title ? "" : subLink.title)}>
+                        {subLink.title}  {subLink.subdropdown && (
+                    <div className="ml-2 transition-all mt-2 h-[11px] w-[11px]">
+                      <Image className="transition-all" src={sidebarSubLiActive === subLink.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
+                  )}  </Link>
+                      {subLink.subdropdown && sidebarSubLiActive === subLink.title && (
+                        <ul className="list-none mt-4 flex flex-col ">
+                          {subLink.subdropdown.map((nestedSubLink, index) => (
+                            <li key={index} className="py-1 ms-6">
+                              {nestedSubLink.title}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+        </div>
+      </div>
+    </div>
+
+    
   );
 };
 

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { location, phone, mail } from "@/public/assets";
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS for styling
+import "react-toastify/dist/ReactToastify.css"; 
 import { ToastContainer, toast } from "react-toastify";
 
 const ContactPage = () => {

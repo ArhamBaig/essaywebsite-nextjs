@@ -54,14 +54,14 @@ const Counter = () => {
               <span>&nbsp;talk.</span>
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4 my-6">
-              <div className="flex flex-col w-[240px] md:w-[270px] items-center p-6 border-b-4 border-r-2 shadow-xl border-r-orange-600 border-orange-600 hover:scale-105 transition-all">
+              <div className="flex flex-col w-[200px] sm:w-[240px] md:w-[270px] items-center p-2 sm:p-3 md:p-6 border-b-4 border-r-2 shadow-xl border-r-orange-600 border-orange-600 hover:scale-105 transition-all">
                 <Image
                   src={assignment}
                   alt="Assignments done till now"
                   height={101}
                   width={101}
                 />
-                <p className="text-base md:text-lg font-semibold mt-2">
+                <p className="text-sm sm:text-base md:text-lg font-semibold mt-2">
                   Assignments Done
                 </p>
                 <CountUp
@@ -74,14 +74,14 @@ const Counter = () => {
                 />
               </div>
 
-              <div className="flex flex-col w-[240px] md:w-[270px] items-center p-6 shadow-xl border-r-2 border-r-orange-600 border-b-4 border-orange-600 hover:scale-105 transition-all">
+              <div className="flex flex-col w-[200px] sm:w-[240px] md:w-[270px] items-center p-2 sm:p-3 md:p-6 shadow-xl border-r-2 border-r-orange-600 border-b-4 border-orange-600 hover:scale-105 transition-all">
                 <Image
                   src={client}
                   alt="Clients served till now"
                   width={150}
                   height={150}
                 ></Image>
-                <p className="text-base md:text-lg font-semibold mt-2">
+                <p className="text-sm sm:text-base md:text-lg font-semibold mt-2">
                   Clients served
                 </p>
                 <CountUp
@@ -94,14 +94,14 @@ const Counter = () => {
                 />
               </div>
 
-              <div className="flex flex-col w-[240px] md:w-[270px] items-center p-6 shadow-xl border-r-2 border-r-orange-600 border-b-4 border-orange-600 hover:scale-105 transition-all">
+              <div className="flex flex-col w-[200px] sm:w-[240px] md:w-[270px] items-center p-2 sm:p-3 md:p-6 shadow-xl border-r-2 border-r-orange-600 border-b-4 border-orange-600 hover:scale-105 transition-all">
                 <Image
                   src={rating}
                   alt="Client ratings of the assignment"
                   width={150}
                   height={150}
                 />
-                <p className="text-base md:text-lg font-semibold mt-2">
+                <p className="text-sm sm:text-base md:text-lg font-semibold mt-2">
                   Client ratings
                 </p>
                 <CountUp

@@ -34,7 +34,7 @@ export const metadata = {
     url: 'https://bestessaywriters.co.uk/'
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
     googleBot: {
       index: false,

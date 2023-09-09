@@ -41,9 +41,9 @@ const HomeReviews = () => {
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 450,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1 ,
           slidesToScroll: 1,
           centerMode: true,
         },
@@ -52,11 +52,11 @@ const HomeReviews = () => {
   };
   return (
     <div className="container max-w-6xl justify-center mx-auto p-5">
-      <h2 className=" text-xl md:text-2xl lg:text-3xl text-center font-bold mb-4">
-        <span className=" shadow-md text-orange border-r-4 border-b-2 border-orange-600 p-2 ">
+      <h2 className=" text-xl max-w-xl mx-auto md:text-2xl lg:text-3xl text-center font-bold mb-4 shadow-md text-orange border-r-4 border-b-2 border-orange-600 p-2 ">
+     
           Best Essay Writer{" "}
           <span className="text-orange-600">Testimonials</span>
-        </span>
+      
       </h2>
 
       <Slider {...settings}>
@@ -124,7 +124,7 @@ const HomeReviews = () => {
 
 const Homereviewcard = ({ review, value, image }) => {
   return (
-    <div className="flex flex-col w-60 h-72 shadow-md items-center justify-between rounded-xl p-4 space-betwee">
+    <div className="flex flex-col max-w-[240px] h-72 shadow-md items-center justify-between rounded-xl p-4 space-betwee">
       <Image
         src={image}
         width={100}
@@ -132,7 +132,7 @@ const Homereviewcard = ({ review, value, image }) => {
         alt="review pfp image"
         className="rounded-3xl"
       />
-      <p className="text-gray-800 mb-2 line-clamp-4 text-sm">❝{review}❞</p>
+      <p className="text-gray-800 mb-2 line-clamp-4 text-xs sm:text-sm">❝{review}❞</p>
       <Box>
         <Rating name="read-only" value={value} readOnly />
       </Box>

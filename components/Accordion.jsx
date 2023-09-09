@@ -17,10 +17,10 @@ const Accordion = () => {
   return (
     <div className="container py-12 relative mx-auto px-1 lg:px-8 flex flex-col ">
       <div className="justify-between items-center">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mt-4  mb-4 p-1">
-          <span className="border-b-4 border-orange-600 border-l-2 shadow-lg  p-2">
+      <h2 className="max-w-xl mx-auto text-xl sm:text-2xl md:text-3xl font-bold text-center my-4 mr-2 ml-2  border-b-4 border-orange-600 border-l-2 shadow-lg  p-1">
           Frequently Asked
-          <span className="text-orange-600"> Questions</span></span></h2>
+          <span className="text-orange-600"> Questions</span>
+          </h2>
         <div className="my-10 grid grid-cols-1 md:grid-cols-2  gap-10">
           {accordionData.map((data, index) => (
             <AccordionItem

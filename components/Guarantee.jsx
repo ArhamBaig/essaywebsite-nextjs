@@ -79,15 +79,15 @@ export const Guarantee = () => {
 
 const GuaranteeCard = ({ name, image, desc ,alt}) => {
   return (
-    <div className="mt-8 py-6 px-1 h-[340px] bg-white border border-gray-300 rounded-lg shadow-md w-56">
+    <div className="mt-8 py-6 px-1 h-[260px] sm:h-[300px] md:h-[340px] bg-white border border-gray-300 rounded-lg shadow-md ">
       <div className="flex justify-center">
         <div className="bg-gray-800 p-4 rounded-3xl group-hover:rounded-md transition-all">
           <Image src={image} alt={alt} width={40} />
         </div>
       </div>
       <div className="my-4 text-center">
-        <p className="text-gray-800 text-lg font-bold ">{name}</p>
-        <p className="">{desc}</p>
+        <p className="text-gray-800 text-sm sm:text-base md:text-lg font-bold ">{name}</p>
+        <p className="text-xs sm:text-sm md:text-base">{desc}</p>
       </div>
     </div>
   );

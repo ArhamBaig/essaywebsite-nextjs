@@ -23,7 +23,6 @@ export default function Home() {
 
         <Professors />
         <div className="shadow-t-lg shadow-slate-400">
-        <Accordion /> 
         </div>
         <div className="shadow-lg shadow-slate-400">
           <Homecontent />
@@ -34,8 +33,9 @@ export default function Home() {
         <div className="shadow-t-lg shadow-slate-400">
         <Dragndrop />
         </div>
-        <Feedback />
         <HomeReviews />
+        <Accordion /> 
+
 
       </div>
     </div>

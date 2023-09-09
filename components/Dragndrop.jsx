@@ -192,33 +192,33 @@ export const Dragndrop = () => {
     <div className="mx-auto grid mt-10 pt-10 grid-cols-1 md:grid-cols-2  mb-10" id="dragndroporder">
       <div className="flex flex-col text-center justify-center pb-4 border-r-0 md:border-r-2 md:border-b-0 border-orange-500 border-b-2 m-2 p-4">
         <div className="container mx-auto w-fit">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-6 border-b-2 border-r-4 border-orange-600 shadow-md p-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-6 border-b-2 border-r-4 border-orange-600 shadow-md p-2">
             Introducing <span className="text-orange-600">Dropzone</span>
           </h2>
           <div className="flex flex-col  justify-center items-center ">
             <div className="max-w-xs p-4  border-b-2 border-gray-300  bg-white  text-center">
-              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+              <h3 className="text-base sm:text-xl font-semibold text-slate-800 mb-2">
                 Step 1: Upload Task Sheet
               </h3>
-              <p className="text-slate-500">
+              <p className="text-sm sm:text-base text-slate-500">
                 Begin by uploading your task sheet using our user-friendly drag
                 and drop interface.
               </p>
             </div>
-            <div className="max-w-xs p-4  border-b-2 border-gray-300  bg-white  text-center">
-              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+            <div className=" max-w-xs p-4  border-b-2 border-gray-300  bg-white  text-center">
+              <h3 className="text-base sm:text-xl font-semibold text-slate-800 mb-2">
                 Step 2: Review & Analysis
               </h3>
-              <p className="text-slate-500">
+              <p className="text-sm sm:text-base text-slate-500">
                 Our team of experts will carefully review and analyze your task
                 sheet to provide valuable insights and recommendations.
               </p>
             </div>
             <div className="max-w-xs p-4 border-b-2 border-gray-300  bg-white  text-center">
-              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+              <h3 className="text-base sm:text-xl font-semibold text-slate-800 mb-2">
                 Step 3: Receive Consultation
               </h3>
-              <p className="text-slate-500">
+              <p className="text-slate-500 text-sm sm:text-base">
                 We&apos;ll send you a detailed consultation report via email,
                 outlining our observations and suggestions to help you achieve
                 your goals.
@@ -229,7 +229,7 @@ export const Dragndrop = () => {
       </div>
 
       <div className="flex flex-col items-center mx-auto w-fit m-2 p-2">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+        <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
           Upload your task sheet and get a free <span className="text-orange-600">Consultation</span>.
         </h2>
         <div
@@ -238,13 +238,13 @@ export const Dragndrop = () => {
         >
           <input {...getInputProps()} />
           {fileLimitExceeded ? (
-            <p className="text-red-600">
+            <p className="text-sm sm:text-base text-red-600">
               File limit exceeded. You can&apos;t add more files.
             </p>
           ) : (
             <div className="text-center">
-              <p className="text-gray-600">
-                Drag and drop files or Click to upload
+              <p className="text-sm sm:text-base text-gray-600">
+                Drag and drop .docx, .pdf, .ppt, .txt files or Click to upload
               </p>
             </div>
           )}{" "}
