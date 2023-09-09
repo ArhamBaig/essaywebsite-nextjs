@@ -159,9 +159,9 @@ export function Hero() {
         <h2 className="text-2xl font-semibold text-orange-600 ">
           Get Quote For Your Assignment
         </h2>
-        <form onSubmit={handleSubmit} method="post" class=" ">
-          <div class="mb-2">
-            <label class="block text-sm font-medium text-gray-700">
+        <form onSubmit={handleSubmit} method="post" className=" ">
+          <div className="mb-2">
+            <label htmlFor="email"  className="block text-sm font-medium text-gray-700">
               Email:
             </label>
             <input
@@ -170,12 +170,12 @@ export function Hero() {
               name="email"
               required
               onChange={(e) => setEmail(e.target.value)}
-              class="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
+              className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
             />
           </div>
 
-          <div class="mb-2">
-            <label class="block text-sm font-medium text-gray-700">
+          <div className="mb-2">
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
               Phone Number:
             </label>
             <input
@@ -184,12 +184,12 @@ export function Hero() {
               name="phone"
               required
               onChange={(e) => setPhoneNumber(e.target.value)}
-              class="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
+              className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
             />
           </div>
 
-          <div class="mb-2">
-            <label class="block text-sm font-medium text-gray-700">
+          <div className="mb-2">
+            <label htmlFor="topic" className="block text-sm font-medium text-gray-700">
               Assignment Topic:
             </label>
             <input
@@ -198,12 +198,12 @@ export function Hero() {
               name="topic"
               onChange={(e) => setTopic(e.target.value)}
               required
-              class="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
+              className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
             />
           </div>
 
-          <div class="mb-2">
-            <label class="block text-sm font-medium text-gray-700">
+          <div className="mb-2">
+            <label htmlFor="wordcount" className="block text-sm font-medium text-gray-700">
               Assignment Word Count:
             </label>
             <input
@@ -212,12 +212,12 @@ export function Hero() {
               name="wordcount"
               required
               onChange={(e) => setWordCount(e.target.value)}
-              class="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
+              className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
             />
           </div>
 
-          <div class="mb-2">
-            <label class="block text-sm font-medium text-gray-700">
+          <div className="mb-2">
+            <label htmlFor="deadline" className="block text-sm font-medium text-gray-700">
               Deadline:
             </label>
             <input
@@ -226,13 +226,13 @@ export function Hero() {
               name="deadline"
               required
               onChange={(e) => setDeadline(e.target.value)}
-              class="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
+              className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-opacity-50 focus:ring-orange-500"
             />
           </div>
 
           <button
             type="submit"
-            class="mt-2 bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 active:scale-95 transition-all"
+            className="mt-2 bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 active:scale-95 transition-all"
           >
             Submit
           </button>
