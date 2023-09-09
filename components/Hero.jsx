@@ -72,15 +72,15 @@ export function Hero() {
   return (
     <div>
     <section className="flex flex-col lg:flex-row shadow-lg bg-slate-100 shadow-slate-400 w-full justify-center items-center xl:items-baseline xl:justify-between sm:px-16 md:px-20 lg:px-24 xl:px-32 z-40">
-      <div className=" xl:h-[700px] mt-32">
+      <div className=" xl:h-[700px] mt-28">
         {/* Text Content */}
         <div className="z-10 sm:max-w-4xl lg:max-w-4xl 2xl:max-w-5xl mt-20  text-left px-8 ">
-          <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-bold md:py-6 text-slate-700">
+          <h1 className="xl:text-4xl lg:text-4xl md:text-3xl text-3xl font-bold md:py-6 text-slate-700">
             The Top-Rated and Best Essay Writing Service in UK to achieve A+
             grade<span className="text-orange-600">.</span>
           </h1>
           <div className="flex">
-            <h2 className="md:text-4xl sm:text-3xl text-xl font-bold py-4 text-slate-700">
+            <h2 className="md:text-3xl sm:text-2xl text-xl font-bold py-4 text-slate-700">
               <span className="text-slate-800">Best place to get your</span>
               <p className="text-orange-600">
                 <Typewriter
@@ -101,7 +101,7 @@ export function Hero() {
             </h2>
           </div>
 
-          <p className="md:text-xl text-lg font-bold text-gray-500 lg:max-w-lg xl:max-w-full ">
+          <p className="md:text-xl sm:text-lg text-base font-bold text-gray-500 lg:max-w-lg xl:max-w-full ">
             Let Your Ideas Flourish, Our Specialists Bring Your Essays to Life!
           </p>
           <div className="flex justify-start mb-4 mt-4  w-full mobile:flex-row items-center">

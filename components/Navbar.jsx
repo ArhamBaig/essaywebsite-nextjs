@@ -142,7 +142,7 @@ const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
         </div>
       </div>
       <div className="bg-gradient-to-r via-orange-600 from-white to-white w-screen h-[120px] z-50 ">
-        <div className="flex justify-between items-center h-[119px] whitespace-nowrap xl:px-52 lg:px-40 md:px-20 bg-white mt-10 ">
+        <div className="flex justify-between items-center h-[119px] whitespace-nowrap sm:px-16 md:px-20 lg:px-24 xl:px-32 bg-white mt-10 ">
           <div className="flex">
             <Link href="/">
               {" "}
@@ -176,7 +176,7 @@ const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
                           )}
                           {subLiActive === sublink.title &&
                             sublink.subdropdown && (
-                              <ul className=" absolute left-52 top-0 h-[410px] w-[660px] lg:w-[700px] xl:w-[1200px] bg-white backdrop-blur-md grid grid-cols-3 grid-rows-[repeat(12,minmax(0,1fr))]">
+                              <ul className=" absolute left-52 top-0 h-[410px] w-[660px] lg:w-[670px] xl:w-[900px] 2xl:w-[1100px] bg-white backdrop-blur-md grid grid-cols-3 grid-rows-[repeat(12,minmax(0,1fr))]">
                                 {sublink.subdropdown.map(
                                   (subsublink, index) => (
                                     <Link key={index} href={subsublink.href}>
