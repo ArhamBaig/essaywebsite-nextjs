@@ -56,11 +56,51 @@ import premium from "./trusted.png";
 import moneyback from "./quality.png";
 import location from "./location.svg";
 import phone from "./phone.svg";
-
+import hero from "./hero-image.webp";
 import whitephone from "./white-phone.png";
 import whitelocation from "./white-location.png";
 import whiteemail from "./white-email.png";
+import rightarrow from "./right-arrow.svg";
+import essayico from "./essay.png";
+import dissertationico from "./dissertation.png";
+import assignmentico from "./assignment.png";
+import casestudyico from "./casestudy.png";
+import reportico from "./report.png";
+import unilogo1 from "./uni-ardenlogo.svg";
+import unilogo2 from "./uni-chesterlogo.png";
+import unilogo3 from "./uni-bsbilogo.jpg";
+import unilogo4 from "./uni-salfordlogo.png";
+import unilogo5 from "./uni-londonlogo.png";
+import studying from "./studying.svg";
+import bannerimg from "./banner-img.svg";
+import supportico from "./value-supportico.png";
+import clockico from "./value-clockico.png";
+import formatico from "./value-formatico.png";
+import plagico from "./value-plagico.png";
+import privacyico from "./value-privacyico.png";
+import qualityico from "./value-qualityico.png";
+
 export {
+  supportico,
+  clockico,
+  formatico,
+  plagico,
+  privacyico,
+  qualityico,
+  bannerimg,
+  studying,
+  unilogo1,
+  unilogo2,
+  unilogo3,
+  unilogo4,
+  unilogo5,
+  essayico,
+  dissertationico,
+  assignmentico,
+  casestudyico,
+  reportico,
+  rightarrow,
+  hero,
   logo2,
   medalicon,
   formaticon,

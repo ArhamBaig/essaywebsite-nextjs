@@ -314,5 +314,11 @@ border-color: rgb(51 65 85 / var(--tw-border-opacity));
   }
 }
 
+.purchasecard::after {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+
+}
 
 
