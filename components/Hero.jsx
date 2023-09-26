@@ -26,11 +26,11 @@ export function Hero() {
               Link your success with the ink of best essay writing service.
             </h1>
             <div className=" w-20 h-[1px] bg-orange-600 rounded-full my-6"></div>
-            <p className="md:text-xl sm:text-lg text-base font-light text-gray-500 lg:max-w-lg xl:max-w-full ">
+            <h2 className="md:text-xl sm:text-lg text-base font-light text-gray-500 lg:max-w-lg xl:max-w-full ">
               Let Your Ideas Flourish, Our Specialists Bring Your Essays to
               Life! Let Your Ideas Flourish, Our Specialists Bring Your Essays to
               Life!
-            </p>
+            </h2>
 
             <div className="flex flex-col mobile:flex-row items-center">
               <button

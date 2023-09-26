@@ -10,7 +10,7 @@ import menu from "./menu.svg";
 import arrowdown from "./arrow-down.svg";
 import logo from "./logo.png";
 import assignment from "./assignment.webp";
-import rating from "./rating.webp";
+// import rating from "./rating.webp";
 import client from "./client.webp";
 import tawktoimg from "./tawktoimg.jpg";
 import accordionarrow from "./accordionarrow.svg";
@@ -79,8 +79,19 @@ import formatico from "./value-formatico.png";
 import plagico from "./value-plagico.png";
 import privacyico from "./value-privacyico.png";
 import qualityico from "./value-qualityico.png";
+import upload from "./lc-upload.png";
+import halfprice from "./lc-halfprice.png";
+import rating from "./lc-rating.png";
+import complete from "./lc-complete.png";
+import discuss from "./lc-discuss.png";
+import deadline from "./lc-deadline.png";
 
 export {
+  upload,
+  halfprice,
+  complete,
+  discuss,
+  deadline,
   supportico,
   clockico,
   formatico,

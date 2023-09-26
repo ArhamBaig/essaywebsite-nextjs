@@ -11,7 +11,7 @@ const DiscountBanner = () => {
                 <p>text text text text text text text text text text text text text text text text text text text </p>
             </div>
             <div className="flex justify-center items-center">
-                <Image src={bannerimg} height={200} width={300} alt="avail discount" className=""/>
+                <Image src={bannerimg} height={200} width={300} alt="avail discount" className="opacity-70"/>
             </div>
         </div>
         <div className="absolute top-0 left-0 w-28 bg-yellow-400">

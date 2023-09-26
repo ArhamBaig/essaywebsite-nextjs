@@ -314,11 +314,20 @@ border-color: rgb(51 65 85 / var(--tw-border-opacity));
   }
 }
 
-.purchasecard::after {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
 
+.arrow {
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid black;
+  width: 0;
+  height: 0;
 }
 
+.arrow::before {
+  content:'';
+  left: 0;
+  width: 30px;
+  height: 15px;
+  background-color: black;
+}
 

@@ -19,6 +19,7 @@ const ValueProposition = () => {
     <h2 className="text-2xl md:text-3xl lg:text-4xl mb-10">Value Proposition</h2>
     <button className="bg-orange-600 text-white px-5 text-lg p-2">ORDER</button>
     </div>
+    
     <div className="grid grid-cols-2 col-span-2 space-x-10">
         <ValueCard  alt="no plagiarism" name="100% original and unique work." image={privacyico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
         <ValueCard  alt="no plagiarism" name="100% original and unique work." image={supportico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
@@ -34,7 +35,7 @@ const ValueProposition = () => {
 
 const ValueCard = ({image,alt,name,desc}) => {
     return(
-        <div className="">
+        <div className="cursor-default">
         <div className="flex justify-center">
           <div className="">
             <Image src={image} alt={alt} width={100} />
