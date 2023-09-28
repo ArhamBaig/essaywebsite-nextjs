@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { Footer } from "@/components/Footer";
 import { Poppins } from "next/font/google";
 import Whatsapp from "@/components/Whatsapp";
+
 import "./globals.css";
 const TawkToMessenger = dynamic(() => import('@/components/Tawkto'));
 
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
           <Navbar />
         </div>
         {children}
+      
         <Footer />
         <TawkToMessenger />
         <Whatsapp />

@@ -317,7 +317,7 @@ border-color: rgb(51 65 85 / var(--tw-border-opacity));
 
 .arrow {
   border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
+  border-bottom: 60px solid transparent;
   border-left: 20px solid black;
   width: 0;
   height: 0;

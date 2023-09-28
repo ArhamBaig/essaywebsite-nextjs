@@ -56,7 +56,7 @@ import premium from "./trusted.png";
 import moneyback from "./quality.png";
 import location from "./location.svg";
 import phone from "./phone.svg";
-import hero from "./hero-image.webp";
+import hero from "./hero-image.png";
 import whitephone from "./white-phone.png";
 import whitelocation from "./white-location.png";
 import whiteemail from "./white-email.png";
@@ -85,8 +85,9 @@ import rating from "./lc-rating.png";
 import complete from "./lc-complete.png";
 import discuss from "./lc-discuss.png";
 import deadline from "./lc-deadline.png";
-
+import logowhite from "./logo-white.png";
 export {
+  logowhite,
   upload,
   halfprice,
   complete,

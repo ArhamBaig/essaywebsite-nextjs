@@ -1,214 +1,91 @@
 "use client";
 
-import { useState, useRef } from "react";
-import {
-  logo,
-  menu,
-  close,
-  facebook,
-  flickr,
-  instagram,
-  linkedin,
-  pinterest,
-  whatsapp2,
-  tumblr,
-  twitter,
-  mail,
-  arrowUp,
-  arrowdown
-} from "../public/assets";
+import { useState } from "react";
+import { logo, menu, close, arrowUp, arrowdown } from "../public/assets";
 import { navLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 const Navbar = () => {
-  const timeoutRef = useRef(null);
   const [liActive, setLiActive] = useState("");
   const [subLiActive, setSubLiActive] = useState("");
- const [sidebarLiActive, setSidebarLiActive] = useState("") 
-const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
+  const [sidebarLiActive, setSidebarLiActive] = useState("");
+  const [sidebarSubLiActive, setSidebarSubLiActive] = useState("");
   const [sidebarToggle, setSidebarToggle] = useState(false);
 
-  const handleMouseEnterLi = (link) => () => {
-    // Use a function to return the event handler
-    if (link.dropdown) {
+  const handleMouseClickLi = (link) => () => {
+    // e.stopPropogation();
+    if (link.title === "Services") {
       setSubLiActive("Essay");
-      setLiActive(link.title);
-      clearTimeout(timeoutRef.current);
+      if (liActive === link.title) {
+        setLiActive("");
+      } else {
+        setLiActive(link.title);
+      }
+    }
+
+    if (link.title === "Universities") {
+      setSubLiActive("Essays");
+      if (liActive === link.title) {
+        setLiActive("");
+      } else {
+        setLiActive(link.title);
+      }
     }
   };
-  const handleMouseLeaveLi = () => {
-    timeoutRef.current = setTimeout(() => {
-      setLiActive("");
-    }, 700);
+  const handleMouseClickLowerDiv = (link) => () => {
+    setLiActive("");
   };
   return (
     <div className=" w-screen z-40 text-black fixed ">
-      <div className="bg-white/80 w-screen px-3 sm:px-8 md:px-14 lg:px-20 fixed backdrop-blur-lg   z-50  flex justify-between items-center h-10">
-        <a href="mailto:Scriptershubltd@gmail.com" >
-          <div className="flex cursor-pointer   font-semibold  rounded-full">
-            <Image
-              className="mr-2 p-[3px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={mail}
-              height={20}
-              width={30}
-              alt="bestessaywriter email"
-            />
-            <p className="hidden md:block">sales@bestessaywriter.co.uk </p>
-          </div>
-        </a>
-        <p className="font-semibold hidden xl:block">
-          Get upto <span className="text-orange-600">50% off</span> on your 1st
-          assignment
-        </p>
-        <div className="flex font-semibold rounded-lg  items-center">
-          <a href="https://twitter.com/BestEssayWrit13" target="_blank">
-            <Image
-              className="p-[6px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={twitter}
-              height={20}
-              width={40}
-              alt="bestessaywriter twitter profile"
-            />
-          </a>
-          <a href="https://www.facebook.com/bestessaywriter.co.uk" target="_blank">
-            <Image
-              className="p-[6px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={facebook}
-              height={20}
-              width={40}
-              alt="bestessaywriter facebook profile"
-            />
-          </a>
-          <a href="https://www.pinterest.co.uk/best_essay_writer" target="_blank">
-            {" "}
-            <Image
-              className="p-[4px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={pinterest}
-              height={20}
-              width={40}
-              alt="bestessaywriter pinterest profile"
-            />
-          </a>
-          <a href="https://www.instagram.com/bestessaywriter.co.uk" target="_blank">
-            {" "}
-            <Image
-              className="p-[5px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={instagram}
-              height={20}
-              width={40}
-              alt="bestessaywriter instagram profile"
-            />
-          </a>
-          <a href="https://www.linkedin.com/company/best-essay-writer" target="_blank">
-            <Image
-              className="p-[5px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={linkedin}
-              height={20}
-              width={40}
-              alt="bestessaywriter linkedin profile"
-            />
-          </a>
-          <a href="https://www.tumblr.com/blog/view/bestessaywriter" target="_blank">
-            <Image
-              className="p-[7px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={tumblr}
-              height={20}
-              width={40}
-              alt="bestessaywriter tumblr profile"
-            />
-          </a>
-          <a href="https://www.flickr.com/photos/helpbestessaywritercouk" target="_blank">
-            <Image
-              className="p-[3px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={flickr}
-              height={20}
-              width={40}
-              alt="bestessaywriter flickr profile"
-            />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send/?phone=%2B447378489100&text&type=phone_number&app_absent=0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="p-[7px] hover:-translate-y-1 transition-all cursor-pointer"
-              src={whatsapp2}
-              height={20}
-              width={40}
-              alt="bestessaywriter whatsapp"
-            />
-          </a>
-        </div>
-      </div>
-      <div className="bg-gradient-to-r via-orange-600 from-white to-white w-screen h-[120px] z-50 ">
-        <div className="flex justify-between items-center h-[119px] whitespace-nowrap sm:px-16 md:px-20 lg:px-24 xl:px-32 bg-white mt-10 ">
+      
+      <div className="bg-gradient-to-r via-orange-600 from-white to-white w-screen h-[81px] z-50 ">
+        <div className="flex justify-between items-center h-[80px] whitespace-nowrap sm:px-16 md:px-20 lg:px-24 xl:px-32 bg-white">
           <div className="flex">
             <Link href="/">
               {" "}
-              <Image height={100} width={150} alt="Go to home" src={logo} />
+              <Image height={60} width={70} alt="Go to home" src={logo} />
             </Link>
             <ul className=" hidden lg:flex  gap-10 lg:gap-12  px-20 items-center ">
               {navLinks.map((link, index) => (
                 <li
                   className="flex cursor-default relative "
                   key={index}
-                  onMouseEnter={handleMouseEnterLi(link)}
-                  onMouseLeave={handleMouseLeaveLi}
+                  onClick={link.dropdown ?
+                    handleMouseClickLi(link) : handleMouseClickLowerDiv("")}
                 >
                   {link.href ? (
-                            <Link href={link.href}>{link.title}</Link>
-                          ) : (
-                            link.title
-                          )}
-                  {liActive === link.title && (
-                    <ul className="absolute -left-52 top-[72px] h-[410px] w-52 bg-white transition-all ease-in-out duration-300">
-                      {link.dropdown.map((sublink, index) => (
-                        <li
-                          key={index}
-                          className="hover:bg-orange-600 cursor-default border-b-[1px]  border-orange-600 transition-all p-2 "
-                          onMouseEnter={() => setSubLiActive(sublink.title)}
-                        >
-                          {sublink.href ? (
-                            <Link href={sublink.href}>{sublink.title}</Link>
-                          ) : (
-                            sublink.title
-                          )}
-                          {subLiActive === sublink.title &&
-                            sublink.subdropdown && (
-                              <ul className=" absolute left-52 top-0 h-[410px] w-[660px] lg:w-[670px] xl:w-[900px] 2xl:w-[1100px] bg-white backdrop-blur-md grid grid-cols-3 grid-rows-[repeat(12,minmax(0,1fr))]">
-                                {sublink.subdropdown.map(
-                                  (subsublink, index) => (
-                                    <Link key={index} href={subsublink.href}>
-                                      <li
-                                        key={index}
-                                        className="p-2 hover:text-orange-600 transition-all cursor-pointer"
-                                        onClick={() => setLiActive("")}
-                                      >
-                                        {subsublink.title}
-                                      </li>
-                                    </Link>
-                                  )
-                                )}
-                              </ul>
-                            )}
-                        </li>
-                      ))}
-                    </ul>
+                    <Link href={link.href}>{link.title}</Link>
+                  ) : (
+                    link.title
+                  )}
+                  {link.dropdown && (
+                    <Image
+                      src={arrowdown}
+                      height={20}
+                      width={15}
+                      className={`ml-2 transition-transform transform ${
+                        liActive === link.title ? "rotate-180" : "rotate-0"
+                      }`}
+                    />
                   )}
                 </li>
+                
               ))}
             </ul>
+            
           </div>
-          <button className="xl:flex hidden bg-white text-black border-2 border-orange-600 hover:text-white hover:bg-orange-500 transition-all
+          <button
+            className="xl:flex hidden bg-white text-black border-2 border-orange-600 hover:text-white hover:bg-orange-500 transition-all
            hover:font-semibold rounded-full h-10 p-5 items-center  animate-pulse"
-           onClick={() => {
-            if (typeof Tawk_API !== "undefined") {
-              Tawk_API.toggle();
-            }
-          }}
-           >Live Chat</button>
-           <div className="lg:hidden flex mt-2 z-30 mr-16 ">
+            onClick={() => {
+              if (typeof Tawk_API !== "undefined") {
+                Tawk_API.toggle();
+              }
+            }}
+          >
+            Live Chat
+          </button>
+          <div className="lg:hidden flex mt-2 z-30 mr-16 ">
             <Image
               src={menu}
               alt="menu"
@@ -217,8 +94,89 @@ const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
             />
           </div>
         </div>
-        
+          
+       
       </div>
+
+      <div
+        // onClick={(prev) => setLiActive(prev)}
+        className={`flex justify-between  h-[500px] transition-opacity duration-300 border-b-[1px] border-black bg-white w-screen ${
+          liActive ? "opacity-100" : "opacity-0 hidden"
+        }`}
+      >
+        {navLinks.map((link) =>
+          Array.isArray(link.dropdown) &&
+          link.dropdown.length > 0 &&
+          link.title === liActive ? (
+            <>
+            {/* <p className="pl-44 pt-10 text-orange-500 font-semibold ">{link.title}</p> */}
+              
+            <ul key={link.title} className="ml-32 mt-8">
+              
+              {link.dropdown.map((sublink, index) => (
+                <li
+                  key={index}
+                  className="p-2 pr-10 flex justify-between border-r-2"
+                  onMouseEnter={() => setSubLiActive(sublink.title)}
+                >
+                  {sublink.href ? (
+                    <Link href={sublink.href}>{sublink.title}</Link>
+                  ) : (
+                    sublink.title
+                  )}
+                  {sublink.subdropdown && (
+                    <Image
+                      src={arrowdown}
+                      width={10}
+                      className={`transition-all -rotate-90 
+                mr-5 
+                ${subLiActive === sublink.title ? "translate-x-2" : ""}
+                `}
+                    />
+                  )}
+                </li>
+              ))}
+            </ul>
+            
+            </>
+          ) : null
+        )}
+        <div className="absolute left-60 top-28 ml-20">
+          <ul className="grid grid-cols-3 gap-x-3 content-list">
+            {navLinks.map((link) =>
+              Array.isArray(link.dropdown) &&
+              link.dropdown.length > 0 &&
+              link.title === liActive
+                ? link.dropdown.map((sublink) =>
+                    Array.isArray(sublink.subdropdown) &&
+                    sublink.subdropdown.length > 0
+                      ? sublink.subdropdown.map(
+                          (subsublink, index) =>
+                            sublink.title === subLiActive &&
+                            sublink.subdropdown && (
+                              <Link key={index} href={subsublink.href}>
+                                <li onClick={handleMouseClickLowerDiv("")} className="p-2 hover:text-orange-500">
+                                  {subsublink.title}
+                                </li>
+                              </Link>
+                            )
+                        )
+                      : null
+                  )
+                : null
+            )}
+          </ul>
+        </div>
+      </div>
+      <div
+        onClick={handleMouseClickLowerDiv("")}
+        className={`bg-black/50 flex h-screen transition-opacity duration-300  ${
+          liActive ? "opacity-100" : "opacity-0 hidden"
+        }`}
+      >
+        {" "}
+      </div>
+
       <div
         className={`${
           sidebarToggle ? "sidebar-visible" : "sidebar-hidden"
@@ -236,54 +194,87 @@ const [sidebarSubLiActive, setSidebarSubLiActive] = useState("")
           />
         </div>
         <div className="justify-start items-start flex flex-col h-[84%] overflow-y-scroll overflow-hidden">
-        <ul className="list-none mt-10 flex flex-col ">
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className={`py-2 cursor-pointer`}
-            >
-            {/* link.href goes here */}
-              <Link href="#" className="flex" onClick={() => setSidebarLiActive((prev)=>prev === link.title ? "" : link.title)}>
-                  {link.title}  {link.dropdown && (
+          <ul className="list-none mt-10 flex flex-col ">
+            {navLinks.map((link, index) => (
+              <li key={index} className={`py-2 cursor-pointer`}>
+                {/* link.href goes here */}
+                <Link
+                  href="#"
+                  className="flex"
+                  onClick={() =>
+                    setSidebarLiActive((prev) =>
+                      prev === link.title ? "" : link.title
+                    )
+                  }
+                >
+                  {link.title}{" "}
+                  {link.dropdown && (
                     <div className="ml-2 transition-all mt-2 h-[11px] w-[11px]">
-                      <Image className="transition-all" alt="Arrow image for dropdown" src={sidebarLiActive === link.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
-                  )} 
-              </Link>
-              {link.dropdown && sidebarLiActive === link.title && (
-                <ul className="list-none mt-4 flex flex-col ">
-                  {link.dropdown.map((subLink, index) => (
-                    <li
-                      key={index}
-                      className="py-1 ms-3 cursor-pointer"
-                      
-                    >
-                      {/* link.href goes here */}
-                      <Link className="flex" href="#" onClick={() => setSidebarSubLiActive((prev)=>prev === subLink.title ? "" : subLink.title)}>
-                        {subLink.title}  {subLink.subdropdown && (
-                    <div className="ml-2 transition-all mt-2 h-[11px] w-[11px]">
-                      <Image className="transition-all" alt="Arrow image for dropdown" src={sidebarSubLiActive === subLink.title ?  arrowUp : arrowdown} height={15} width={20}/> </div>
-                  )}  </Link>
-                      {subLink.subdropdown && sidebarSubLiActive === subLink.title && (
-                        <ul className="list-none mt-4 flex flex-col ">
-                          {subLink.subdropdown.map((nestedSubLink, index) => (
-                            <li key={index} className="py-1 ms-6">
-                              {nestedSubLink.title}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
+                      <Image
+                        className="transition-all"
+                        alt="Arrow image for dropdown"
+                        src={
+                          sidebarLiActive === link.title ? arrowUp : arrowdown
+                        }
+                        height={15}
+                        width={20}
+                      />{" "}
+                    </div>
+                  )}
+                </Link>
+                {link.dropdown && sidebarLiActive === link.title && (
+                  <ul className="list-none mt-4 flex flex-col ">
+                    {link.dropdown.map((subLink, index) => (
+                      <li key={index} className="py-1 ms-3 cursor-pointer">
+                        
+                        <Link
+                          className="flex"
+                          href="#"
+                          onClick={() =>
+                            setSidebarSubLiActive((prev) =>
+                              prev === subLink.title ? "" : subLink.title
+                            )
+                          }
+                        >
+                          {subLink.title}{" "}
+                          {subLink.subdropdown && (
+                            <div className="ml-2 transition-all mt-2 h-[11px] w-[11px]">
+                              <Image
+                                className="transition-all"
+                                alt="Arrow image for dropdown"
+                                src={
+                                  sidebarSubLiActive === subLink.title
+                                    ? arrowUp
+                                    : arrowdown
+                                }
+                                height={15}
+                                width={20}
+                              />{" "}
+                            </div>
+                          )}{" "}
+                        </Link>
+                        {subLink.subdropdown &&
+                          sidebarSubLiActive === subLink.title && (
+                            <ul className="list-none mt-4 flex flex-col ">
+                              {subLink.subdropdown.map(
+                                (nestedSubLink, index) => (
+                                  <li key={index} className="py-1 ms-6">
+                                    {nestedSubLink.title}
+                                  </li>
+                                )
+                              )}
+                            </ul>
+                          )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
-
-    
   );
 };
 

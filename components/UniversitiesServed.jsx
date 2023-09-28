@@ -11,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 const UniversitiesServed = () => {
   return (
-    <div className="bg-slate-200 pt-32 ">
+    <div className="bg-slate-200 pt-10 lg:pt-32 ">
       <div className="container mx-auto grid justify-center items-center ">
         <h2 className=" text-gray-600 capitalize text-center pb-4">
           We have worked on assignments from these universities

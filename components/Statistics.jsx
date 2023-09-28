@@ -2,17 +2,17 @@
 import CountUp from "react-countup";
 import { studying } from "@/public/assets";
 import Image from "next/image";
-import Link from "next/link";
+
 const Statistics = () => {
   return (
-    <div className="bg-orange-800 pt-20 pb-10">
-      <div className="container mx-auto lg:flex-row flex-col justify-center items-center py-10">
-        <h2 className=" text-gray-300 capitalize  pb-4">
+    <div className="bg-gradient-to-r from-orange-800 via-orange-700 via-80% to-orange-800 pt-4 lg:pt-20 pb-10">
+      <div className="container mx-auto lg:flex-row flex-col justify-center items-center py-4 lg:py-10">
+        <h2 className="text-center lg:text-left text-gray-300 capitalize  pb-4">
           Let the Numbers talk.{" "}
         </h2>
 
-        <div className="flex justify-between">
-          <div className="grid grid-cols-2 items-center justify-center h-fit">
+        <div className="flex lg:justify-between flex-col lg:flex-row justify-center items-center">
+          <div className="grid grid-cols-2 items-center justify-center h-fit xl:w-[750px]">
             <StatCounter
               name={"rating"}
               value={4.8}
@@ -33,7 +33,7 @@ const Statistics = () => {
             width={600}
             height={400}
             alt="man studying"
-            className="opacity-50 "
+            className="opacity-50 lg:w-[480px] xl:w-[600px]"
           />
         </div>
       </div>
@@ -51,10 +51,10 @@ const StatCounter = ({
   suffix,
 }) => {
   return (
-    <div className="flex w-[200px] sm:w-[240px] md:w-[270px] items-center p-2 sm:p-3 md:p-6 text-white">
-      <div className=" grid grid-cols-2 justify-center items-center pl-2 gap-14">
+    <div className="flex items-center p-2 sm:p-3 md:p-6 text-white">
+      <div className="w-36 sm:w-56 md:w-72 lg:w-96 grid grid-cols-2 justify-center items-center pl-0 lg:pl-2 gap-0 lg:gap-10 xl:gap-2 ">
         <CountUp
-          className="text-2xl sm:text-4xl md:text-5xl"
+          className="text-xl sm:text-4xl md:text-5xl "
           end={value}
           decimal={decimal}
           decimals={decimalValue}
@@ -63,7 +63,7 @@ const StatCounter = ({
           duration={5}
         />
         <div>
-          <p className="text-base md:text-lg capitalize mt-2">{name}</p>
+          <p className="text-xs md:text-lg capitalize mt-2">{name}</p>
           <div className=" w-16 h-[1px] bg-gray-300 rounded-full my-2"></div>
         </div>{" "}
       </div>

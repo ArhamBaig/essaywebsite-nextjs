@@ -78,8 +78,18 @@ export const navLinks = [
       { title: "Term Paper Writing", href: "/term-paper-writing" },
     ]
   },
+  {title: "Universities",   
+   dropdown: [
+    { title: "Essays", 
+    href: "/",
+    subdropdown: [{title:"Hey", href:"/"}]
+  
+  },
+    { title: "Essay2", 
+    href: "/"},
+  ]},
+  {title: "Reviews", href:"/blog"},
   {title: "Blogs", href:"/blog"},
-  {title: "Reviews",href: "/reviews"},
   {title: "Contact Us", href: "/contact"},
    ];
 
