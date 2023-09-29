@@ -86,7 +86,16 @@ import complete from "./lc-complete.png";
 import discuss from "./lc-discuss.png";
 import deadline from "./lc-deadline.png";
 import logowhite from "./logo-white.png";
+import DEflag from "./de.svg";
+import AUflag from "./au.svg";
+import UKflag from "./gb.svg";
+import globe from "./globe.svg";
+
 export {
+  DEflag,
+AUflag,
+UKflag,
+globe,
   logowhite,
   upload,
   halfprice,

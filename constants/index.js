@@ -175,6 +175,252 @@ export const services = [
   },
 ];
 
+export const uniData = [
+  {
+    id: 1,
+    slug: "best-assignment-writing-service",                                                                                            
+    country: "Australia",
+    title: "Chester University",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  {
+    id: 2,
+    slug: "best-assignment-writing-service",
+    country: "Australia",
+    title: "The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  {
+    id: 3,
+    slug: "administrative-law-assignment-help",
+    country: "United Kingdom",
+    title: "The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  {
+    id: 4,
+    slug: "academic-referencing-styles",
+    country: "Australia",
+    title: "The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  {
+    id: 5,
+    slug: "academic-referencing-styles",
+    country: "United Kingdom",
+
+    title: "The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  {
+    id: 6,
+    slug: "academic-referencing-styles",
+    country: "Germany",
+    
+    title: "The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  {
+    id: 7,
+    slug: "academic-referencing-styles",
+    country: "Saudia",
+
+    title: "The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  {
+    id: 8,
+    country: "United Kingdom",
+    slug: "academic-referencing-styles",
+    title: "The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    image: client,
+    date: "8/12/2023",
+    isoDate: new Date("8/12/2023").toISOString(),
+    read: "12",
+    author: "Admin",
+    openGraph: {
+    title:"The Importance of Proofreading and Editing in Academic Writing",
+    description: "The importance of proofreading and editing in academic writing. Eliminate errors, improve quality and readability, and obtain better grades.",
+    images: [
+      {
+        url: 'https://scriptersltd.com/bestessaywriters/wp-content/uploads/2023/03/Importance-of-Editing-Proofreading-with-PhD-Expert-rebecca-James.jpg',
+        width: 1200,
+        height: 628,
+        type: 'image/jpeg'
+      }
+    ],
+    locale: 'en_US',
+    type: 'article',
+        publishedTime: '2023-08-08T00:00:00.000Z',
+    authors: "https://www.facebook.com/bestessaywriter.co.uk",
+    site_name: "Best Essay Writer",
+    url: 'https://scriptersltd.com/bestessaywriters/blog/importance-of-proofreading-and-editing/'
+  },
+  },
+  
+];
 export const blogData = [
   {
     id: 1,

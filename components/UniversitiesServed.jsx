@@ -53,7 +53,7 @@ const UniversitiesServed = () => {
           />
         </div>
         <div className="pb-32 flex justify-center items-center pt-10">
-          <Link href={"/"} className="group flex space-x-2">
+          <Link href={"/universities"} className="group flex space-x-2">
             <p>See More</p>
             <Image
               src={rightarrow}

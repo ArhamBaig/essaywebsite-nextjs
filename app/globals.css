@@ -188,44 +188,8 @@ body {
   transition: transform 0.3s;
 }
 
-.content-list {
-  list-style: none;
-  margin-left: 2.5rem;
-  padding-left: 20px;
-}
 
-.content-list li::marker {
-  content: "➔  "; /* Use a right arrow character */
-  color: rgb(194 65 12 / var(--tw-bg-opacity));
-  font-weight: bold; /* Increase the font weight for thicker bullets */
-  margin-right: 5px;
-  --tw-bg-opacity: 1; 
-}
 
-.content-p {
-  --tw-text-opacity: 1;
-    color: rgb(55 65 81 / var(--tw-text-opacity));
-    line-height: 1.625;
-    margin-bottom: 1rem;
-}
-.content-h1 {
-  --tw-border-opacity: 1;
-border-color: rgb(51 65 85 / var(--tw-border-opacity));
-  font-size: 1.875rem/* 30px */;
-  line-height: 2.25rem/* 36px */;
-   border-left-width: 4px;
-   border-bottom-width: 2px;
-   font-weight: 700;
-   margin-bottom: 1.25rem/* 20px */;
-   margin-top: 2rem/* 32px */;
-   display: flex;
-   justify-content: center;
-   text-align: center;
-   padding: 0.5rem;
-   
-  --tw-text-opacity: 1;
-    color: rgb(234 88 12 / var(--tw-text-opacity));
-}
 
 .content-img {
    margin-bottom: 2.5rem/* 40px */;
@@ -235,35 +199,6 @@ border-color: rgb(51 65 85 / var(--tw-border-opacity));
     margin-top: 2.5rem/* 40px */;
 }
 
-.content-h2 {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 146 60 / var(--tw-border-opacity));
-  font-size: 1.5rem/* 24px */;
-    line-height: 2rem/* 32px */;
-  border-bottom-width: 4px;
-  margin-top: 0.5rem/* 8px */;
-  font-weight: 500;
-   margin-bottom: 1rem/* 16px */;
-   display: flex;
-   justify-content: center;
-   text-align: center;
-}
-.content-h3 {
-  font-size: 1.25rem/* 20px */;
-    line-height: 1.75rem/* 28px */;
-  font-weight: 700;
-  margin-bottom: 1rem/* 16px */;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-
-.content-link {
-  --tw-text-opacity: 1;
-  color: rgb(249 115 22 / var(--tw-text-opacity));
-  font-weight: 600;
-}
 
 .useful-list li::marker {
   content: "➔  "; /* Use a right arrow character */
@@ -331,3 +266,38 @@ border-color: rgb(51 65 85 / var(--tw-border-opacity));
   background-color: black;
 }
 
+.content-list {
+  list-style: none;
+  margin-left: 2.5rem;
+  padding-left: 20px;
+}
+.content-list li::marker {
+  content: "➔  "; /* Use a right arrow character */
+  color: rgb(194 65 12 / var(--tw-bg-opacity));
+  font-weight: bold; /* Increase the font weight for thicker bullets */
+  margin-right: 5px;
+  --tw-bg-opacity: 1; 
+}
+.content-p {
+  @apply text-xs sm:text-sm md:text-base
+}
+.content-h1 {
+  @apply  text-xl sm:text-2xl md:text-3xl flex justify-center items-center text-center my-4 sm:my-6 md:my-8 
+}
+
+.content-h2 {
+  @apply  text-lg sm:text-xl md:text-2xl my-3 md:my-5 lg:my-7
+
+}
+.content-h3 {
+  font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+  font-weight: 700;
+  margin-bottom: 1rem/* 16px */;
+}
+
+.content-link {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity));
+  font-weight: 600;
+}
