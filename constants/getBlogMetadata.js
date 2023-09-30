@@ -6,7 +6,7 @@ const getBlogMetadata = () => {
   const files = fs.readdirSync(folder);
   const jsxPosts = files.filter((file) => file.endsWith(".jsx"));
 
-  const BlogMetadata = jsxPosts
+  const blogMetadata = jsxPosts
     .map((htmlFile) => {
       const slug = htmlFile.replace(".jsx", "");
       const blog = blogData.find((blog) => blog.slug === slug);
@@ -39,7 +39,7 @@ const getBlogMetadata = () => {
     })
     .filter(Boolean); // Remove any null values from the mapping
 
-  return BlogMetadata;
+  return blogMetadata;
 };
 
 export default getBlogMetadata;

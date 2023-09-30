@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import getBlogMetadata from "@/constants/getBlogMetadata";
-import Image from "next/image";
 import { blogData } from "@/constants";
 import UsefulLink from "@/components/UsefulLink";
 

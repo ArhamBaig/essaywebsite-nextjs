@@ -5,13 +5,13 @@ import Image from "next/image";
 
 const Whatsapp = () => {
   return (
-    <div className="z-20 fixed bottom-10 left-10 flex items-center group gap-3 max-w-fit">
+    <div className="z-20 fixed bottom-4 left-5 flex items-center group gap-3 max-w-fit">
     <a
       href="http://wa.me/+447378489100"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="bg-green-400 group-hover:bg-green-700 group-hover:scale-125 duration-300 rounded-full w-16 h-16 flex justify-center items-center">
+      <div className="bg-green-400 group-hover:bg-green-700 group-hover:scale-105 duration-300 rounded-full w-16 h-16 flex justify-center items-center">
         <Image src={whatsapp} alt="whatsapp icon" height={50} width={50} />
       </div>
       </a>

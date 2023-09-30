@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { Footer } from "@/components/Footer";
 import { Poppins } from "next/font/google";
 import Whatsapp from "@/components/Whatsapp";
-
+import LottieAnimation from "@/components/LottieAnimation";
 import "./globals.css";
 const TawkToMessenger = dynamic(() => import('@/components/Tawkto'));
 
@@ -61,7 +61,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} `}>
+      <body className={`${poppins.className}`}>
         <div className="flex ">
           <Navbar />
         </div>
@@ -70,6 +70,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <TawkToMessenger />
         <Whatsapp />
+        <LottieAnimation />
       </body>
     </html>
   );

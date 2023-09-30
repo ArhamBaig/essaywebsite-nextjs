@@ -37,21 +37,23 @@ const Navbar = () => {
   };
   return (
     <div className=" w-screen z-40 text-black fixed ">
-      
       <div className="bg-gradient-to-r via-orange-600 from-white to-white w-screen h-[81px] z-50 ">
         <div className="flex justify-between items-center h-[80px] whitespace-nowrap sm:px-16 md:px-20 lg:px-24 xl:px-32 bg-white">
-          <div className="flex">
+          <div className="flex pl-10">
             <Link href="/">
               {" "}
-              <Image height={60} width={70} alt="Go to home" src={logo} />
+              <Image height={60} width={60} alt="Go to home" src={logo} />
             </Link>
             <ul className=" hidden lg:flex  gap-10 lg:gap-12  px-20 items-center ">
               {navLinks.map((link, index) => (
                 <li
                   className="flex cursor-default relative "
                   key={index}
-                  onClick={link.dropdown ?
-                    handleMouseClickLi(link) : handleMouseClickLowerDiv("")}
+                  onClick={
+                    link.dropdown
+                      ? handleMouseClickLi(link)
+                      : handleMouseClickLowerDiv("")
+                  }
                 >
                   {link.href ? (
                     <Link href={link.href}>{link.title}</Link>
@@ -63,20 +65,19 @@ const Navbar = () => {
                       src={arrowdown}
                       height={20}
                       width={15}
+                      alt="navbar dropdown arrow"
                       className={`ml-2 transition-transform transform ${
                         liActive === link.title ? "rotate-180" : "rotate-0"
                       }`}
                     />
                   )}
                 </li>
-                
               ))}
             </ul>
-            
           </div>
           <button
-            className="xl:flex hidden bg-white text-black border-2 border-orange-600 hover:text-white hover:bg-orange-500 transition-all
-           hover:font-semibold rounded-full h-10 p-5 items-center  animate-pulse"
+            className="xl:flex hidden bg-orange-600 text-white transition-all
+            h-10 p-5 items-center  animate-pulse hover:animate-none"
             onClick={() => {
               if (typeof Tawk_API !== "undefined") {
                 Tawk_API.toggle();
@@ -94,8 +95,6 @@ const Navbar = () => {
             />
           </div>
         </div>
-          
-       
       </div>
 
       <div
@@ -109,35 +108,32 @@ const Navbar = () => {
           link.dropdown.length > 0 &&
           link.title === liActive ? (
             <>
-            {/* <p className="pl-44 pt-10 text-orange-500 font-semibold ">{link.title}</p> */}
-              
-            <ul key={link.title} className="ml-32 mt-8">
-              
-              {link.dropdown.map((sublink, index) => (
-                <li
-                  key={index}
-                  className="p-2 pr-10 flex justify-between border-r-2"
-                  onMouseEnter={() => setSubLiActive(sublink.title)}
-                >
-                  {sublink.href ? (
-                    <Link href={sublink.href}>{sublink.title}</Link>
-                  ) : (
-                    sublink.title
-                  )}
-                  {sublink.subdropdown && (
-                    <Image
-                      src={arrowdown}
-                      width={10}
-                      className={`transition-all -rotate-90 
-                mr-5 
-                ${subLiActive === sublink.title ? "translate-x-2" : ""}
-                `}
-                    />
-                  )}
-                </li>
-              ))}
-            </ul>
-            
+              {/* <p className="pl-44 pt-10 text-orange-500 font-semibold ">{link.title}</p> */}
+
+              <ul key={link.title} className="ml-32 mt-8">
+                {link.dropdown.map((sublink, index) => (
+                  <li
+                    key={index}
+                    className="p-2 pr-10 flex justify-between border-r-2"
+                    onMouseEnter={() => setSubLiActive(sublink.title)}
+                  >
+                    {sublink.href ? (
+                      <Link href={sublink.href}>{sublink.title}</Link>
+                    ) : (
+                      sublink.title
+                    )}
+                    {sublink.subdropdown && (
+                      <Image
+                        src={arrowdown}
+                        width={10}
+                        className={`transition-all -rotate-90 mr-5 
+                        ${subLiActive === sublink.title ? "translate-x-2" : ""}`}
+                        alt="navbar dropdown arrow"
+                      />
+                    )}
+                  </li>
+                ))}
+              </ul>
             </>
           ) : null
         )}
@@ -155,7 +151,10 @@ const Navbar = () => {
                             sublink.title === subLiActive &&
                             sublink.subdropdown && (
                               <Link key={index} href={subsublink.href}>
-                                <li onClick={handleMouseClickLowerDiv("")} className="p-2 hover:text-orange-500">
+                                <li
+                                  onClick={handleMouseClickLowerDiv("")}
+                                  className="p-2 hover:text-orange-500"
+                                >
                                   {subsublink.title}
                                 </li>
                               </Link>
@@ -226,7 +225,6 @@ const Navbar = () => {
                   <ul className="list-none mt-4 flex flex-col ">
                     {link.dropdown.map((subLink, index) => (
                       <li key={index} className="py-1 ms-3 cursor-pointer">
-                        
                         <Link
                           className="flex"
                           href="#"

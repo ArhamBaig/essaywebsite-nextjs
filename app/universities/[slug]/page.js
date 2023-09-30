@@ -1,6 +1,5 @@
 import Link from "next/link";
 import getUniMetadata from "@/constants/getUniMetadata";
-import Image from "next/image";
 import { uniData } from "@/constants";
 import UsefulLink from "@/components/UsefulLink";
 

@@ -3,7 +3,7 @@ import UsefulLink from "./UsefulLink";
 import { logo ,whitelocation,whitephone,whiteemail} from "@/public/assets";
 export const Footer = () => {
   return (
-    <footer className="mt-auto bg-gray-800 text-white">
+    <footer className="mt-auto bg-gray-900 text-white">
       <div className="mx-auto py-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         <div className="logo  flex flex-col   text-white p-10">
           <div className="text-center flex flex-col justify-center items-center">

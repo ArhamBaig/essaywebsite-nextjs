@@ -90,8 +90,15 @@ import DEflag from "./de.svg";
 import AUflag from "./au.svg";
 import UKflag from "./gb.svg";
 import globe from "./globe.svg";
+import trustpilotlogo from "./trustpilotlogo.svg"
+import sitejabberlogo from "./sitejabberlogo.png"
+import gmblogo from "./gmblogo.svg"
+
 
 export {
+  trustpilotlogo,
+sitejabberlogo,
+gmblogo,
   DEflag,
 AUflag,
 UKflag,
