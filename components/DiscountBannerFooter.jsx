@@ -4,41 +4,44 @@ import Image from "next/image"
 import { useState, useEffect } from 'react';
  
 const DiscountBannerFooter = () => {
-    const targetDate = Date.now() + 10000000;
-    const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
-  
-    useEffect(() => {
+  const isServer = typeof window === 'undefined';
+  const targetDate = Date.now() + 10000000;
+  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+
+  useEffect(() => {
+    if (!isServer) {
       const timerInterval = setInterval(() => {
         setTimeRemaining(calculateTimeRemaining());
       }, 1000);
-  
+
       return () => {
         clearInterval(timerInterval);
       };
-    }, []);
-  
-    function calculateTimeRemaining() {
-      const currentTime = Date.now();
-      const timeDifference = targetDate - currentTime;
-  
-      if (timeDifference <= 0) {
-        return {
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-        };
-      }
-  
-      const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
-      const seconds = Math.floor((timeDifference / 1000) % 60);
-  
+    }
+  }, [isServer]);
+
+   function  calculateTimeRemaining () {
+    const currentTime =  Date.now();
+    const timeDifference = targetDate - currentTime;
+
+    if (timeDifference <= 0) {
       return {
-        hours,
-        minutes,
-        seconds,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
       };
     }
+
+    const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
+    const seconds = Math.floor((timeDifference / 1000) % 60);
+
+    return {
+      hours,
+      minutes,
+      seconds,
+    };
+  }
   return (
     <div className="bg-gradient-to-r from-orange-800 via-orange-700  to-orange-800 lg:mx-auto lg:max-w-5xl xl:max-w-6xl mt-20 relative mx-3">
    

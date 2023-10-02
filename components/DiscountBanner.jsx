@@ -1,25 +1,28 @@
 "use client"
-import { bannerimg,  logowhite } from "@/public/assets"
+import {logowhite } from "@/public/assets"
 import Image from "next/image"
 ;
 import React, { useState, useEffect } from 'react';
 
 const DiscountBanner = () => {
+  const isServer = typeof window === 'undefined';
   const targetDate = Date.now() + 10000000;
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
 
   useEffect(() => {
-    const timerInterval = setInterval(() => {
-      setTimeRemaining(calculateTimeRemaining());
-    }, 1000);
+    if (!isServer) {
+      const timerInterval = setInterval(() => {
+        setTimeRemaining(calculateTimeRemaining());
+      }, 1000);
 
-    return () => {
-      clearInterval(timerInterval);
-    };
-  }, []);
+      return () => {
+        clearInterval(timerInterval);
+      };
+    }
+  }, [isServer]);
 
-  function calculateTimeRemaining() {
-    const currentTime = Date.now();
+   function  calculateTimeRemaining () {
+    const currentTime =  Date.now();
     const timeDifference = targetDate - currentTime;
 
     if (timeDifference <= 0) {

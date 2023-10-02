@@ -46,7 +46,7 @@ const UniversitiesPage = () => {
           </h1>
           <p className="font-semibold mb-2 mt-4">Country</p>
           <div className="flex justify-between w-lg mb-2">
-            <Image src={UKflag} width={20}/>
+            <Image src={UKflag} width={20} alt="UK Flag"/>
             <p className="">United Kingdom </p>
             <input
               type="checkbox"
@@ -55,7 +55,7 @@ const UniversitiesPage = () => {
             />
           </div>
           <div className="flex justify-between mb-2">
-          <Image src={DEflag} width={20}/>
+          <Image src={DEflag} width={20} alt="Germany Flag"/>
 
             <p className="">Germany </p>
             <input
@@ -65,7 +65,7 @@ const UniversitiesPage = () => {
             />
           </div>
           <div className="flex justify-between mb-2">
-          <Image src={AUflag} width={20}/>
+          <Image src={AUflag} width={20} alt="Australia Flag"/>
 
             <p >Australia </p>
             <input
@@ -76,7 +76,7 @@ const UniversitiesPage = () => {
             />
           </div>
           <div className="flex justify-between mt-3 mb-2">
-          <Image src={globe} width={20}/>
+          <Image src={globe} width={20} alt="globe image"/>
 
             <p className="">Other </p>
             <input
@@ -97,7 +97,7 @@ const UniversitiesPage = () => {
                 alt={uni.title}
                 className="w-full h-52 object-cover rounded-t-lg"
               />
-              <Image src={UKflag} width={20}/>
+              <Image src={UKflag} width={20} alt="UK Flag"/>
               <h3 className="text-md font-semibold mt-2">{uni.title}</h3>
               <p className="text-gray-600 line-clamp-3">{uni.description}</p>
               <Link
