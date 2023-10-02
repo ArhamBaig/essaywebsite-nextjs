@@ -1,6 +1,5 @@
 import Box  from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-
 import {
   supportico,
   clockico,
@@ -12,9 +11,7 @@ import {
   sitejabberlogo,
   gmblogo
 } from "@/public/assets";
-
 import Image from "next/image";
-
 
 const ValueProposition = () => {
   return (

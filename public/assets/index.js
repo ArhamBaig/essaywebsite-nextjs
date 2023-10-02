@@ -9,13 +9,11 @@ import arrowUp from "./arrow-up.svg";
 import menu from "./menu.svg";
 import arrowdown from "./arrow-down.svg";
 import logo from "./logo.png";
-import assignment from "./assignment.webp";
-// import rating from "./rating.webp";
+
 import client from "./client.webp";
 import tawktoimg from "./tawktoimg.jpg";
 import accordionarrow from "./accordionarrow.svg";
-import give from "./give.svg";
-import feedback from "./feedback.svg";
+
 import blogging from "./blogging.webp";
 import essay30off from "./essay30off.webp";
 import essay30off2 from "./big-discount-offer.jpg";
@@ -29,19 +27,11 @@ import casestudyimg from "./casestudy.webp";
 import whatsapp from "./whatsapp.png";
 import logo2 from "./logo2.png";
 import tipsandtricks from "./tipsandtricks.webp";
-import professor1 from "./professor-1.png";
-import professor2 from "./professor-2.png";
-import professor3 from "./professor-3.png";
-import professor4 from "./professor-4.png";
 import plus from "./plus.svg";
 import minus from "./minus.png";
 import reviewpfp1 from "./review-pfp-1.png";
 import reviewpfp2 from "./review-pfp-2.png";
 import reviewpfp3 from "./review-pfp-3.png";
-import reviewpfp4 from "./review-pfp-4.png";
-import reviewpfp5 from "./review-pfp-5.png";
-import reviewpfp6 from "./review-pfp-6.png";
-import reviewpfp7 from "./review-pfp-7.png";
 import facebook from "./facebookico.svg";
 import flickr from "./flickrico.png";
 import instagram from "./instagramico.png";
@@ -51,9 +41,6 @@ import whatsapp2 from "./whatsappico.svg";
 import tumblr from "./tumblrico.png";
 import twitter from "./twitterico.png";
 import mail from "./email.svg";
-import trusted from "./fairtrade.png";
-import premium from "./trusted.png";
-import moneyback from "./quality.png";
 import location from "./location.svg";
 import phone from "./phone.svg";
 import hero from "./hero-image.png";
@@ -79,12 +66,6 @@ import formatico from "./value-formatico.png";
 import plagico from "./value-plagico.png";
 import privacyico from "./value-privacyico.png";
 import qualityico from "./value-qualityico.png";
-import upload from "./lc-upload.png";
-import halfprice from "./lc-halfprice.png";
-import rating from "./lc-rating.png";
-import complete from "./lc-complete.png";
-import discuss from "./lc-discuss.png";
-import deadline from "./lc-deadline.png";
 import logowhite from "./logo-white.png";
 import DEflag from "./de.svg";
 import AUflag from "./au.svg";
@@ -104,11 +85,6 @@ AUflag,
 UKflag,
 globe,
   logowhite,
-  upload,
-  halfprice,
-  complete,
-  discuss,
-  deadline,
   supportico,
   clockico,
   formatico,
@@ -130,24 +106,14 @@ globe,
   rightarrow,
   hero,
   logo2,
-  medalicon,
-  formaticon,
-  priceicon,
-  privacyicon,
-  customersupporticon,
-  timeicon,
   logo,
   menu,
   close,
   arrowdown,
   arrowUp,
-  assignment,
-  rating,
   client,
   tawktoimg,
   accordionarrow,
-  give,
-  feedback,
   blogging,
   essay30off,
   Drhenryimage,
@@ -160,31 +126,12 @@ globe,
   casestudyimg,
   whatsapp,
   tipsandtricks,
-  professor1,
-  professor2,
-  professor3,
-  professor4,
   plus,
   minus,
   reviewpfp1,
   reviewpfp2,
   reviewpfp3,
-  reviewpfp4,
-  reviewpfp5,
-  reviewpfp6,
-  reviewpfp7,
-  facebook,
-  flickr,
-  instagram,
-  linkedin,
-  pinterest,
-  whatsapp2,
-  tumblr,
-  twitter,
   mail,
-  trusted,
-  premium,
-  moneyback,
   location,
   phone,
   whitephone,

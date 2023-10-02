@@ -9,7 +9,7 @@ const Content = () => {
        Some Heading
       </h2>
       <div className=" w-20 h-[1px] bg-orange-600 rounded-full my-6 flex items-center justify-center"></div>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 max-w-5xl ">
         <div className="flex flex-col justify-center items-center m-4 my-3">
           <h2 className="text-lg md:text-xl lg:text-2xl text-justify md:text-left">
             Lorem ipsum dolor, sit amet{" "}
@@ -127,7 +127,7 @@ const Content = () => {
           </>
         ) : (
           <button
-            className="bg-slate-800 text-white p-2 col-span-2  mx-auto"
+            className="bg-slate-800 text-white p-2 col-span-2  mx-auto mt-10"
             onClick={() => setShowMore(true)}
           >
             READ MORE
@@ -135,7 +135,7 @@ const Content = () => {
         )}
         {showMore && (
           <button
-            className="bg-slate-800 text-white p-2 col-span-2  mx-auto"
+            className="bg-slate-800 text-white p-2 col-span-2  mx-auto mt-10"
             onClick={() => setShowMore(false)}
           >
             Read Less
