@@ -19,6 +19,7 @@ const Statistics = () => {
               decimal={"."}
               decimalValue={1}
               suffix={"/5"}
+
             />
             <StatCounter name={"assignment"} value={43} suffix={"K+"} />
             <StatCounter name={"client"} value={9} suffix={"K+"} />
@@ -61,6 +62,9 @@ const StatCounter = ({
           suffix={suffix}
           delay={0.75}
           duration={5}
+          enableScrollSpy
+          scrollSpyOnce
+          
         />
         <div>
           <p className="text-xs md:text-lg capitalize mt-2">{name}</p>

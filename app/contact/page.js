@@ -65,7 +65,7 @@ const ContactPage = () => {
           >
             <div>
               <h1 className="my-5">
-                <span className="font-bold  text-2xl sm:text-3xl md:text-4xl  lg:text-5xl text-orange-600">
+                <span className="font-bold  text-2xl sm:text-3xl md:text-4xl  lg:text-5xl text-orange-500">
                   Contact us Directly
                 </span>
               </h1>
@@ -119,25 +119,25 @@ const ContactPage = () => {
           </form>
         </div>
         <div className="">
-          <h2 className="text-3xl font-semibold mb-2 mt-2 xl:mt-0">
+          <h2 className="text-3xl text-gray-300 font-semibold mb-2 mt-2 xl:mt-0">
             Feel free to reach us anywhere!
           </h2>
           <div className="flex items-center">
             <Image src={location} height={20} width={20} alt="our location"/>
-            <p className="pl-2">
+            <p className="text-gray-300 pl-2">
               551 Butcher Row, London E1W 3EP, United Kingdom
             </p>
           </div>
           <a href="tel:+447378489100">
-            <div className="flex mt-2 items-center">
+            <div className="flex mt-2 text-gray-300 items-center">
               <Image src={phone} height={20} width={20} alt="our contact number"/>
-              <p className="pl-2 hover:text-orange-600">+44 7378 489100</p>
+              <p className="pl-2 hover:text-orange-500 text-gray-300">+44 7378 489100</p>
             </div>
           </a>
           <a href="mailto:Scriptershubltd@gmail.com">
             <div className="flex mt-2 items-center">
               <Image src={mail} height={20} width={20} alt="our email"/>
-              <p className="pl-2 hover:text-orange-600">
+              <p className="pl-2 hover:text-orange-500 text-gray-300">
                 sales@bestessaywriter.co.uk
               </p>
             </div>

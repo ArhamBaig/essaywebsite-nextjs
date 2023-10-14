@@ -4,6 +4,11 @@ import { logo ,whitelocation,whitephone,whiteemail} from "@/public/assets";
 export const Footer = () => {
   return (
     <footer className="mt-auto bg-gray-900 text-white">
+      <div className="flex flex-col items-center justify-center mt-10 px-2">
+        <p className="text-xl text-center lg:text-left">Don&apos;t <span className="text-orange-600">think</span> too much, You may miss your <span className="text-orange-600">deadline</span></p>
+        <p className="text-gray-300  mt-2 text-center lg:text-left">Get assistance on our Whatsapp where we will guide you</p>
+        <a href="https://wa.me/+447378489100" target="_blank"><button className="bg-green-500 animate-bounce mt-4 p-2 text-black rounded-sm">Let&apos;s talk</button></a>
+      </div>
       <div className="mx-auto py-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         <div className="logo  flex flex-col   text-white p-10">
           <div className="text-center flex flex-col justify-center items-center">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import getUniMetadata from "@/constants/getUniMetadata";
 import { uniData } from "@/constants";
 import UsefulLink from "@/components/UsefulLink";
+import { Heroforcontent } from "@/components/Heroforcontent";
 
 const getUniContent = async (slug) => {
   const uniJson = uniData.find((uni) => uni.slug === slug);
@@ -67,23 +68,18 @@ const UniPage = async (props) => {
     );
   }
   return (
+    <>
+    <Heroforcontent heading1={uniJson.title} heading2={uniJson.author}/>
     <div className="h-auto mt-12">
       <div className="mt-14 grid grid-cols-3 px-2 sm:px-6 md:px-10 lg:px-20 xl:px-32">
  
-        <div className="mx-auto w-full max-w-4xl bg-gray-100 p-2 sm:p-5 lg:p-8 rounded-lg col-span-3 lg:col-span-2">
+        <div className="mx-auto w-full max-w-4xl  p-2 sm:p-5 lg:p-8 rounded-lg col-span-3 lg:col-span-2">
         
-          <div className="flex justify-center mb-4">
-            <p className="text-orange-600">
-              By {uniJson.author} - {uniJson.date}
-            </p>
-          </div>
-          <div className="flex justify-center mb-4">
-            <p className="text-green-600">{uniJson.read} min read</p>
-          </div>
+          
           <div>{uniContent}</div>
         </div>
         <div className="hidden lg:block px-10">
-          <h2 className="text-3xl text-slate-800 font-semibold mb-4 whitespace-nowrap">
+          <h2 className="text-3xl text-gray-300 font-semibold mb-4 whitespace-nowrap">
             All Essays
           </h2>
           <ul className="space-y-2 content-list mb-20">
@@ -107,7 +103,7 @@ const UniPage = async (props) => {
             <UsefulLink name="Cheap Essay Writing Services" href="/" />
             <UsefulLink name="Essay Writers Online" href="/" />
           </ul>
-          <h2 className="text-3xl text-slate-800 font-semibold mb-4 whitespace-nowrap">
+          <h2 className="text-3xl text-gray-300 font-semibold mb-4 whitespace-nowrap">
             Other Services
           </h2>
           <ul className="space-y-2 content-list">
@@ -131,6 +127,7 @@ const UniPage = async (props) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 export const generateStaticParams = async () => {

@@ -88,7 +88,7 @@ const PurchaseCycle = () => {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <PurchaseCard heading={"Customer support"} desc={"First visit on chat support and connect with our customer support representative."}/>
+                <PurchaseCard heading={"Customer support"} desc={"First, join chat support and connect with our student support representative."}/>
               </TimelineContent>
             </TimelineItem>
             

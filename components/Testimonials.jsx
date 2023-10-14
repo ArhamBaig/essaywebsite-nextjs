@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const Testimonials = () => {
   return (
-    <div className="container max-w-6xl flex flex-col items-center justify-center mx-auto p-5">
+    <div className=" bg-white flex flex-col items-center justify-center pt-1 p-5">
      <h2 className="text-black capitalize text-center ">
         Testimonials
       </h2>

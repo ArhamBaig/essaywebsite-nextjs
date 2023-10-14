@@ -15,11 +15,11 @@ import Image from "next/image";
 
 const ValueProposition = () => {
   return (
-  <div className="-mt-24 bg-white pt-40 pb-20 grid grid-col-1 lg:grid-cols-3  lg:container lg:mx-auto">
+  <div className="-mt-44 bg-white pt-52 pb-20 grid grid-col-1 lg:grid-cols-3   ">
     <div className="flex flex-col items-center mb-10 lg:mb-2">
-      <h2 className=" text-gray-600  text-sm text-center lg:text-left">Value Proposition</h2>
+      <h2 className=" text-gray-600  text-sm text-center lg:text-left">What Makes Us Stand Out</h2>
       <div className=" w-20 h-[1px] bg-orange-600 rounded-full my-6"></div>
-      <h2 className="text-2xl md:text-3xl lg:text-4xl mb-10">Value Proposition</h2>
+      <h2 className="text-2xl md:text-3xl lg:text-4xl mb-10">Our Promises</h2>
       <button className="bg-orange-600 text-white px-5 text-lg p-2">ORDER</button>
       <div className="mt-7 justify-center flex flex-col items-center ">
       <p className="text-sm text-gray-400 p-2">Checkout our client reviews</p>
@@ -61,13 +61,13 @@ const ValueProposition = () => {
       </div>
     </div>
     
-    <div className="grid grid-cols-2 lg:col-span-2 gap-2 p-2">
-        <ValueCard  alt="no plagiarism" name="100% original and unique work." image={privacyico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
-        <ValueCard  alt="no plagiarism" name="100% original and unique work." image={supportico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
-        <ValueCard  alt="no plagiarism" name="100% original and unique work." image={clockico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
-        <ValueCard  alt="no plagiarism" name="100% original and unique work." image={formatico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
-        <ValueCard  alt="no plagiarism" name="100% original and unique work." image={plagico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
-        <ValueCard  alt="no plagiarism" name="100% original and unique work." image={qualityico} desc="We provide work along with the plagiarism report as a proof that the work is 100% original and plag-free." />
+    <div className="grid grid-cols-2 lg:col-span-2 gap-2 p-2 px-5">
+        <ValueCard  alt="no plagiarism" name="Ensured Privacy" image={privacyico} desc="Our Essay Help UK experts guarantee your privacy, ensuring your peace of mind." />
+        <ValueCard  alt="no plagiarism" name="Get free assistance in your academics" image={supportico} desc="Take a deep dive into the wellspring of understanding with our free-of-cost academic assistance at any time." />
+        <ValueCard  alt="no plagiarism" name="On time delivery" image={clockico} desc="We promise immediate delivery before the deadline without excuses. Consequently, your academic work will be on time every time." />
+        <ValueCard  alt="no plagiarism" name="Instructions-driven content" image={formatico} desc="From instruction to creation, we cater to all the instructions you will give us while hiring our services." />
+        <ValueCard  alt="no plagiarism" name="Original and unique content" image={plagico} desc="Experience the magic of original and unique content with our creative and expert content wizards." />
+        <ValueCard  alt="no plagiarism" name="Get student-friendly prices" image={qualityico} desc="Invest in your future without breaking the bank, Cheap Essay Writing UK understands student budgets. We bring you generous discounts." />
     </div>
   </div>
   )

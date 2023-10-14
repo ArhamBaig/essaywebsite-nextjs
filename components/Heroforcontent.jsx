@@ -1,7 +1,6 @@
 "use client";
 import Lottie from "lottie-react";
 import animationData from "@/public/lottie-files/herolottiefile.json";
-import { Typewriter } from "react-simple-typewriter";
 
 import Image from "next/image";
 import {
@@ -17,63 +16,57 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 
-export function Hero() {
+export function Heroforcontent({heading1,heading2}) {
+  function scroll30Percent() {
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const targetScroll = windowHeight * 0.8;
+  
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth',
+    });
+  }
   return (
 
     <div>
-      <section className="flex flex-col lg:flex-row shadow-lg bg-gradient-to-b from-slate-900 from-70% to-slate-600 shadow-slate-400 w-full justify-center items-center sm:px-2 md:px-6 lg:px-0 xl:px-28 z-10">
+      <section className="flex flex-col lg:flex-row shadow-lg bg-gradient-to-b from-slate-900 from-70% to-slate-600 w-full justify-center items-center sm:px-2 md:px-6 lg:px-0 xl:px-28 z-10">
         <div className="relative lg:h-[700px] mt-24">
           {/* Text Content */}
           <div className=" z-10 sm:max-w-4xl lg:max-w-4xl 2xl:max-w-5xl  flex flex-col items-center justify-center lg:text-left lg:justify-start lg:items-start px-8 ">
             <h1 className="xl:text-5xl text-white lg:text-4xl md:text-3xl text-2xl md:pt-6 text-center lg:text-left">
-              Link your success with the ink of best essay writing service.
+              {heading1}
             </h1>
             <div className=" w-20 h-[1px] bg-orange-600 rounded-full my-6"></div>
             <h2 className="md:text-xl italic sm:text-lg text-base text-gray-300  font-light max-w-sm lg:max-w-sm xl:max-w-3xl text-center lg:text-left ">
-            Bringing the complete suite of Academic services for all the students around the globe while considering privacy and maintaining the top-notch grades. <br /> It’s the best place to get
-            <span className='text-orange-400'>
-                <Typewriter
-                  words={[" essays", " assignments", " reports", " dissertations"]}
-                  loop={Infinity}
-                  cursor
-                  cursorStyle="_"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-              </span>
+            {heading2}
+            
             </h2>
            
-            <div className=" relative mt-20 z-20">
+            <div onClick={scroll30Percent} className="cursor-pointer relative mt-20 z-20">
             <Lottie
         animationData={animationData}
         className="z-4 0 absolute h-32 w-32 right-7 -top-20 lg:right-0"
         loop={true}
       />
               <button
-                id="placeOrderButton"
-                className="bg-orange-600 font-bold w-[180px] sm:w-[200px]  my-6 py-3 text-white transition-all active:scale-95 "
-                onClick={() => {
-                  if (typeof Tawk_API !== "undefined") {
-                    Tawk_API.toggle();
-                  }
-                }}
+                
+                className="bg-orange-600 font-bold w-[180px] sm:w-[200px]  my-6 py-3 text-white transition-all "
+               
               >
-                PLACE AN ORDER
+                Take me to content!
               </button>
             </div>
-            <div className="lg:absolute lg:bottom-2  lg:left-44">
+            <div className="lg:absolute lg:bottom-0  lg:left-44">
               <Image
                 src={hero}
                 width={700}
                 height={400}
-                alt="Hero Section Image"
-                priority= {true}
+                alt="hero image"
               />
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center sm:h-fit mt-10 p-4  shadow-lg m-6  lg:w-[600px] b bg-gradient-to-r  from-orange-500/70  to-orange-600/70  rounded-lg">
+        <div className="xl:flex xl:flex-col hidden justify-center items-center sm:h-fit mt-10 p-4  shadow-lg m-6  lg:w-[600px] b bg-gradient-to-r  from-orange-500/70  to-orange-600/70  rounded-lg">
           <h2 className=" text-gray-100 text-sm ">Our Top Services</h2>
 
           <TopServiceCard

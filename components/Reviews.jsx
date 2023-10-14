@@ -21,7 +21,7 @@ const Reviews = () => {
               What our clients say about us
             </div>
   
-            <h1 className="text-center md:text-5xl sm:text-4xl text-3xl  md:py-6 text-slate-700">
+            <h1 className="text-center md:text-5xl sm:text-4xl text-3xl  md:py-6 text-gray-300">
               BESTESSAYWRITER REVIEWS<span className="text-orange-600">.</span>
             </h1>
           </div>
@@ -58,12 +58,12 @@ const Reviews = () => {
   };
   const Reviewcard = ({ userid, review, value, date }) => {
     return (
-      <div className="mt-8 md:w-[340px] lg:w-[400px] xl:w-[500px] p-5  rounded-lg bg-slate-100  shadow-lg">
+      <div className="mt-8 md:w-[340px] lg:w-[400px] xl:w-[500px] p-5  rounded-lg bg-gradient-to-br from-slate-900 hover:shadow-lg hover:shadow-white transition-all  to-orange-800 from-80%  shadow-lg">
         <div className="flex flex-col mobile:flex-row mobile:items-start"> {/* Remove justifyContent */}
   
           <div className="flex-grow ms-5 mt-2 md:mt-0"> {/* Add margin-top to adjust alignment */}
-            <h1 className="text-slate-700 text-lg font-semibold">USER_ID: {userid}</h1>
-            <p className="text-slate-700 mt-2 line-clamp-4 text-sm lg:text-base">{review}</p> {/* Adjust text color and margin */}
+            <h1 className="text-gray-300 text-lg font-semibold">USER_ID: {userid}</h1>
+            <p className="text-gray-300 mt-2 line-clamp-4 text-sm lg:text-base">{review}</p> {/* Adjust text color and margin */}
           </div>
           <div className="flex flex-col justify-center items-end"> {/* Center the Rating and date */}
             <Box>

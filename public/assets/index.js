@@ -1,19 +1,11 @@
-import medalicon from "./medal-icon.png";
-import formaticon from "./format-icon.png";
-import priceicon from "./price-icon.png";
-import privacyicon from "./privacy-icon.png";
-import customersupporticon from "./customersupport-icon.png";
-import timeicon from "./time-icon.png";
 import close from "./close.svg";
 import arrowUp from "./arrow-up.svg";
 import menu from "./menu.svg";
 import arrowdown from "./arrow-down.svg";
 import logo from "./logo.png";
-
 import client from "./client.webp";
 import tawktoimg from "./tawktoimg.jpg";
 import accordionarrow from "./accordionarrow.svg";
-
 import blogging from "./blogging.webp";
 import essay30off from "./essay30off.webp";
 import essay30off2 from "./big-discount-offer.jpg";
@@ -32,14 +24,6 @@ import minus from "./minus.png";
 import reviewpfp1 from "./review-pfp-1.png";
 import reviewpfp2 from "./review-pfp-2.png";
 import reviewpfp3 from "./review-pfp-3.png";
-import facebook from "./facebookico.svg";
-import flickr from "./flickrico.png";
-import instagram from "./instagramico.png";
-import linkedin from "./linkedinico.png";
-import pinterest from "./pinterestico.png";
-import whatsapp2 from "./whatsappico.svg";
-import tumblr from "./tumblrico.png";
-import twitter from "./twitterico.png";
 import mail from "./email.svg";
 import location from "./location.svg";
 import phone from "./phone.svg";

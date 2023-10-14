@@ -3,31 +3,7 @@
 @tailwind utilities;
 
 
-.gradient {
-  height: fit-content;
-  z-index: 1;
-  width: 100%;
-  max-width: 640px;
-  background-image: radial-gradient(
-      at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
-    ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  filter: blur(100px) saturate(150%);
-  top: 80px;
-  opacity: 0.15;
-  
-}
+
 
 .ReactCollapse--collapse {
   transition: height 400ms;
@@ -79,23 +55,52 @@ body {
 
 .dropdown {
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity .3s ease, transform .3s ease;
+  height: 0px;
+  transform: translateY(-10%);
+  padding:0px;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out, height 0.2s ease-in-out, padding 0.2 ease-in-out;
 }
 
-/* Dropdown is visible */
 .dropdown-enter {
   opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  height: 500px;
+  padding:40px;
+  transform: translateY(0%);
 }
 
-/* Dropdown is about to be hidden */
 .dropdown-exit {
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
+  height: 0px;
+  padding:0px;
+  transform: translateY(-10%);
+}
+
+.sidebar-hidden {
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-visible {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar-dropdown{
+  height: 0px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.sidebar-dropdown-enter {
+  height: fit-content;
+  opacity: 1;
+}
+
+.sidebar-dropdown-exit {
+  height: 0px;
+  opacity: 0;
 }
 /* Add appropriate positioning styles to the sub-dropdown */
 .sub-dropdown {
@@ -215,40 +220,6 @@ body {
 
 }
 
-@keyframes slideup {
-  0% {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  100%{
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes slideleft {
-  0% {
-    opacity: 0;
-    transform: translateX(18px);
-  }
-
-  100%{
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes slidedown {
-  0% {
-    opacity: 0;
-    transform: translateY(-18px);
-  }
-
-  100%{
-    opacity: 1;
-    transform: none;
-  }
-}
-
 
 .arrow {
   border-top: 20px solid transparent;
@@ -265,39 +236,54 @@ body {
   height: 15px;
   background-color: black;
 }
-
+.content p{
+  @apply text-xs sm:text-sm md:text-base text-gray-300
+}
 .content-list {
-  list-style: none;
-  margin-left: 2.5rem;
-  padding-left: 20px;
-}
-.content-list li::marker {
-  content: "➔  "; /* Use a right arrow character */
-  color: rgb(194 65 12 / var(--tw-bg-opacity));
-  font-weight: bold; /* Increase the font weight for thicker bullets */
-  margin-right: 5px;
-  --tw-bg-opacity: 1; 
-}
-.content-p {
-  @apply text-xs sm:text-sm md:text-base
-}
-.content-h1 {
-  @apply  text-xl sm:text-2xl md:text-3xl flex justify-center items-center text-center my-4 sm:my-6 md:my-8 
-}
-
-.content-h2 {
-  @apply  text-lg sm:text-xl md:text-2xl my-3 md:my-5 lg:my-7
-
-}
-.content-h3 {
-  font-size: 1.25rem/* 20px */;
-    line-height: 1.75rem/* 28px */;
-  font-weight: 700;
-  margin-bottom: 1rem/* 16px */;
-}
+  @apply text-xs border-l-[1px] border-slate-600 sm:text-sm md:text-base list-none  pl-8 text-gray-300
+  }
+  
+  .content-list li::marker {
+    content: "> ";
+  }
+  
+  .content-p {
+    @apply text-xs sm:text-sm md:text-base text-white
+  }
+  .content-h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl text-center my-6 sm:my-8 md:my-10 text-white border-b-[2px] border-slate-500 pb-14
+  }
+  .content-h2 {
+    @apply  text-2xl sm:text-3xl md:text-4xl  text-left my-4 sm:my-6 md:my-8 text-orange-600 border-b-[1px] border-slate-500 pb-4
+  
+  }
+  .content-h3 {
+    @apply text-lg sm:text-xl md:text-2xl text-orange-600 my-4 mt-4
+  }
 
 .content-link {
   --tw-text-opacity: 1;
   color: rgb(249 115 22 / var(--tw-text-opacity));
   font-weight: 600;
+}
+.dropdown {
+  opacity: 0;
+  height: 0px;
+  transform: translateY(-10%);
+  padding:0px;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out, height 0.2s ease-in-out, padding 0.2 ease-in-out;
+}
+
+.dropdown-enter {
+  opacity: 1;
+  height: 500px;
+  padding:40px;
+  transform: translateY(0%);
+}
+
+.dropdown-exit {
+  opacity: 0;
+  height: 0px;
+  padding:0px;
+  transform: translateY(-10%);
 }

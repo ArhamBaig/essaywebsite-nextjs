@@ -4,50 +4,45 @@ import Image from "next/image"
 import { useState, useEffect } from 'react';
  
 const DiscountBannerFooter = () => {
-  const isServer = typeof window === 'undefined';
-  const targetDate = Date.now() + 10000000;
-  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(15); // Start from 15 minutes
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    if (!isServer) {
-      const timerInterval = setInterval(() => {
-        setTimeRemaining(calculateTimeRemaining());
-      }, 1000);
+    const target = new Date(); // Start from the current time
+    target.setMinutes(target.getMinutes() + 15); // Set the target time to 15 minutes from now
+    target.setSeconds(target.getSeconds() + 40)
+    const interval = setInterval(() => {
+      const now = new Date();
+      const difference = target.getTime() - now.getTime();
 
-      return () => {
-        clearInterval(timerInterval);
-      };
-    }
-  }, [isServer]);
+      if (difference <= 0) {
+        // Timer reached 0, you can clear the interval here if needed
+        clearInterval(interval);
+        // Optionally, set the state to 0 when the timer ends
+        setHours(0);
+        setMinutes(0);
+        setSeconds(0);
+      } else {
+        const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        setHours(h);
 
-   function  calculateTimeRemaining () {
-    const currentTime =  Date.now();
-    const timeDifference = targetDate - currentTime;
+        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        setMinutes(m);
 
-    if (timeDifference <= 0) {
-      return {
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
-    }
+        const s = Math.floor((difference % (1000 * 60)) / 1000);
+        setSeconds(s);
+      }
+    }, 1000);
 
-    const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
-    const seconds = Math.floor((timeDifference / 1000) % 60);
-
-    return {
-      hours,
-      minutes,
-      seconds,
-    };
-  }
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="bg-gradient-to-r from-orange-800 via-orange-700  to-orange-800 lg:mx-auto lg:max-w-5xl xl:max-w-6xl mt-20 relative mx-3">
    
     <div className="grid grid-cols-1 lg:grid-cols-12  lg:py-10">
       <div className="w-full col-span-2 flex justify-center items-center">
-      <Image src={logowhite} width={200} height={200} alt="white logo"/>
+      <Image src={logowhite} width={150} height={200} alt="white logo"/>
       </div>
       <div className="text-white p-2 px-5 pr-10 col-span-7 text-center lg:text-left flex flex-col justify-center items-center">
         <h2 className="text-3xl mb-2">Dive into the Ocean of Knowledge</h2>
@@ -60,18 +55,18 @@ const DiscountBannerFooter = () => {
           <div className="flex z-10 text-center">
             <div className="bg-black/50 rounded-lg w-full h-15 p-2">
               <p className="text-xs text-gray-300 ">Hours</p>
-            <span className="text-white">{timeRemaining.hours.toString().padStart(2, '0')}</span>
+            <span className="text-white">{hours}</span>
             </div>
             <div className="bg-black/50 rounded-lg  w-full h-15 ml-2 mr-2 p-2">
             <p className="text-xs text-gray-300 ">Minutes</p>
 
-            <span className="text-white">{timeRemaining.minutes.toString().padStart(2, '0')}</span>
+            <span className="text-white">{minutes}</span>
             </div>
             <div className="bg-black/50 rounded-lg  w-full h-15 p-2">
             <p className="text-xs text-gray-300">Seconds</p>
 
             <span className="text-white">
-              {timeRemaining.seconds.toString().padStart(2, '0')}
+              {seconds}
             </span>
 
             </div>
