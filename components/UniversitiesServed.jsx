@@ -4,7 +4,7 @@ import {
   unilogo3,
   unilogo4,
   unilogo5,
-  rightarrow,
+  rightarrowblack,
 } from "@/public/assets";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,7 +55,7 @@ const UniversitiesServed = () => {
           <Link href={"/universities"} className="group flex space-x-2">
             <p>See More</p>
             <Image
-              src={rightarrow}
+              src={rightarrowblack}
               width={10}
               height={10}
               alt="right arrow"

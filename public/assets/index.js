@@ -58,9 +58,10 @@ import globe from "./globe.svg";
 import trustpilotlogo from "./trustpilotlogo.svg"
 import sitejabberlogo from "./sitejabberlogo.png"
 import gmblogo from "./gmblogo.svg"
-
+import rightarrowblack from "./right-arrow-black.svg";
 
 export {
+  rightarrowblack,
   trustpilotlogo,
 sitejabberlogo,
 gmblogo,

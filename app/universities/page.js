@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { UKflag, DEflag, AUflag, globe } from "@/public/assets";
+import { UKflag} from "@/public/assets";
 import { uniData } from "@/constants";
 import Link from "next/link";
 
@@ -32,8 +32,8 @@ const UniversitiesPage = () => {
           <p className="py-2 text-orange-500">Type your University Name to search...</p>
           <input
             type="text"
-            placeholder="&#128270; Search by university name..."
-            className="px-4 py-2 w-96 text-white focus:outline-none bg-slate-600 rounded-lg"
+            placeholder="&#128270; University Name..."
+            className="px-4 py-2 w-full md:w-96 text-white focus:outline-none bg-slate-600 rounded-lg"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
